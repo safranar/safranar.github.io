@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ca">
-<head>
-<meta charset="UTF-8">
+<!-- saved from url=(0027)https://safranar.github.io/ -->
+<html lang="ca"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Editorial SAFRANAR — València</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./Editorial SAFRANAR — València_files/css2" rel="stylesheet">
 <style>
   :root{
     --bg:#1c1114; --bg2:#25161b; --ink:#f4ede4; --muted:rgba(244,237,228,.62);
@@ -16,6 +16,7 @@
   }
   body[data-col="val"]{ --bg:#0f1e15; --bg2:#152a1d; --accent:#8fce9c; --accent-ink:#0f1e15; --card:rgba(143,206,156,.07); --line:rgba(143,206,156,.18); }
   body[data-col="mus"]{ --bg:#161022; --bg2:#1d1530; --accent:#b48ce0; --accent-ink:#161022; --card:rgba(180,140,224,.07); --line:rgba(180,140,224,.18); }
+  body[data-col="imp"]{ --bg:#1e1a0f; --bg2:#2a2314; --accent:#d4b45a; --accent-ink:#1e1a0f; --card:rgba(212,180,90,.07); --line:rgba(212,180,90,.18); }
 
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -71,6 +72,7 @@
   .tab[data-col="lit"] .dot{background:#c94f45}
   .tab[data-col="val"] .dot{background:#3e8e5a}
   .tab[data-col="mus"] .dot{background:#b48ce0}
+  .tab[data-col="imp"] .dot{background:#d4a24e}
   .tab:hover{color:var(--ink); border-color:var(--muted)}
   .tab.active{background:var(--ink); color:var(--bg); border-color:var(--ink)}
   .tab.active .dot{background:var(--bg) !important}
@@ -131,12 +133,17 @@
   /* Gama de verds — València */
   .b-green1{--band:#2e7d5b}
   .b-green2{--band:#557c2e}
+  /* Gama daurada — Imprescindibles */
+  .b-gold1{--band:#a17c1a}
+  .b-gold2{--band:#c9a227}
+  .b-gold3{--band:#8a6d1f}
 
   .card-info{display:flex; flex-direction:column; gap:.55rem; min-width:0}
   .card-meta{font:600 .68rem var(--sans); letter-spacing:.14em; text-transform:uppercase; color:var(--accent); transition:color .8s var(--ease)}
   .card-info h3{font-family:var(--serif); font-weight:700; font-size:clamp(1.35rem,3vw,1.7rem); line-height:1.15; letter-spacing:-.01em}
   .card-info h3.alt{font-size:clamp(1.05rem,2.4vw,1.3rem); font-weight:500; font-style:italic; color:var(--muted)}
   .card-info .author{font-style:italic; font-family:var(--serif); font-size:1rem; color:var(--muted)}
+  .card-info .tagline{font-style:italic; font-family:var(--serif); font-size:.95rem; line-height:1.5; color:var(--accent); transition:color .8s var(--ease)}
 
   /* Argument (amb ampliació +) */
   .blurb p{color:var(--muted); font-size:.92rem; line-height:1.7; margin-top:.4rem}
@@ -206,13 +213,14 @@
   }
   #toast.on{transform:translate(-50%,0)}
 </style>
+<!--<base target="_blank">--><base href="." target="_blank">
 <base target="_blank">
 </head>
 <body data-col="lit">
 
 <header>
   <div class="header-in">
-    <a class="logo" href="#"><small>EDITORIAL</small>SAFRANAR</a>
+    <a class="logo" href="https://safranar.github.io/#"><small>EDITORIAL</small>SAFRANAR</a>
     <nav class="langs" aria-label="Idioma / Language">
       <button data-lang="ca" class="active">CA</button>
       <button data-lang="es">ES</button>
@@ -225,11 +233,12 @@
 
 <div class="tabs-wrap">
   <div class="tabs-in">
-    <span class="tabs-label" data-i18n="colTitle"></span>
+    <span class="tabs-label" data-i18n="colTitle">Col·leccions:</span>
     <nav class="tabs" aria-label="Col·leccions">
-      <button class="tab active" data-col="lit"><span class="dot"></span><span data-i18n="tabLit"></span></button>
-      <button class="tab" data-col="val"><span class="dot"></span><span data-i18n="tabVal"></span></button>
-      <button class="tab" data-col="mus"><span class="dot"></span><span data-i18n="tabMus"></span></button>
+      <button class="tab active" data-col="lit"><span class="dot"></span><span data-i18n="tabLit">Literatura</span></button>
+      <button class="tab" data-col="val"><span class="dot"></span><span data-i18n="tabVal">València</span></button>
+      <button class="tab" data-col="imp"><span class="dot"></span><span data-i18n="tabImp">Imprescindibles</span></button>
+      <button class="tab" data-col="mus"><span class="dot"></span><span data-i18n="tabMus">Música</span></button>
     </nav>
   </div>
 </div>
@@ -238,24 +247,221 @@
   <!-- LITERATURA -->
   <section class="panel show" id="panel-lit">
     <div class="watermark">LITERATURA</div>
-    <div class="grid" id="grid-lit"></div>
+    <div class="grid" id="grid-lit"><article class="card">
+    <div class="book"><div class="cover b-red1">
+    <span class="ctitle">Cinc casquets de cartutxos</span>
+    <div class="cband">
+      <span class="cauthor">Walter Gorrish</span>
+      <span class="cpublisher">Editorial Safranar</span>
+    </div>
+  </div></div>
+    <div class="card-info">
+      <p class="card-meta">Col·lecció Literatura, 1 · Valencià/Català · EPUB · Trad. de l'alemany: F. J. Hernàndez · ISBN: 978-84-09-94078-3</p>
+      <h3>Cinc casquets de cartutxos</h3>
+      <p class="author">Walter Gorrish</p>
+      <p class="tagline">«Una excel·lent obra literària, encara inèdita, sobre la Guerra de 1936-1939»</p>
+      <div class="blurb clamped"><p><em>Cinc casquets de cartutxos</em> de Walter Gorrish és un guió cinematogràfic que adapta la pròpia experiència de l'autor a les Brigades Internacionals durant la Guerra Civil Espanyola. La història segueix un grup de set combatents estrangers i espanyols que, a la primavera de 1938 al Front de l'Ebre, reben la perillosa missió de cobrir la retirada del seu batalló sense munició ni provisions. Assetjats per la set, la fam i les tropes feixistes, els protagonistes guarden fragments d'un mapa estratègic en casquets de bala per fer-lo arribar a l'estat major. Al llarg de la trama, personatges clau com el comandant Sander i l'operador de ràdio Wasja sacrifiquen les seues vides per la causa antifeixista. Finalment, malgrat les pèrdues i el sofriment extrem, els supervivents aconsegueixen arribar a un riu, simbolitzant la resistència i la victòria final de la solidaritat internacional.</p></div>
+       <button class="more" onclick="toggleMore(this)" aria-label="+">+</button>
+      <div class="card-actions">
+        <a class="btn ghost" href="#" onclick="return fakeLink(event)">Descarregar prova de lectura</a>
+        <a class="btn solid" href="https://buy.stripe.com/3cI4gB0j5g1H87KdrT2Fa04" target="_blank" rel="noopener">Adquirir-lo · 8,00 €</a>
+        
+      </div>
+    </div>
+  </article><article class="card">
+    <div class="book"><div class="cover b-red2">
+    <span class="ctitle">Dos novelas sobre Valencia</span>
+    <div class="cband">
+      <span class="cauthor">Adolphe Falgairolle · Georges Pillement</span>
+      <span class="cpublisher">Editorial Safranar</span>
+    </div>
+  </div></div>
+    <div class="card-info">
+      <p class="card-meta">Col·lecció Literatura, 2 · Castellà · EPUB · Trad. del francès, notes i epíleg: T. Gorriá i F. J. Hernàndez · ISBN: 978-84-09-94077-6</p>
+      <h3>Dos novelas sobre Valencia</h3>
+      <p class="author">Adolphe Falgairolle · Georges Pillement</p>
+      <p class="tagline">«Dos novelas sobre la Valencia de la Belle Époque»</p>
+      <div class="blurb clamped"><p><em>¡Valencia! Amores de España</em> (1928), d'Adolphe Falgairolle, narra en primera persona les vivències de Jean, un cineasta francés que passa les seues estances entre les cims pirinenques de Torrebuena i la ciutat de València amb la família de Don Cristóbal Águilas. Don Cristóbal té cinc filles de dos matrimonis: per una banda, les bessones Amparo i Dorita, caracteritzades per la seua aparent inèrcia i nihilisme quotidià; per altra, Teresa, una jove decidida i vital. Jean entaula un profund llaç sentimental amb Teresa. Tanmateix, la precària situació econòmica de Don Cristóbal empeny Teresa a casar-se per conveniència amb un ric industrial català. Temps després, Jean i Teresa reprenguen la seua passió clandestina a París i València. Les germanastres Amparo i Dorita, actuant com a observadores manipuladores, descobreixen el romanç i delaten la parella, provocant que Teresa siga reclosa al convent de Santa Agripina. Finalment, Jean, amb la col·laboració del seu amic Antonio i mitjançant falses declaracions i influències, aconsegueix rescatar Teresa i fugir amb ella en barco cap a Sudamérica.</p><p><em>Valencia entre dos sueños</em> (1931), de Georges Pillement, és una obra de tall líric, nostàlgic i al·lucinatori, estructurada al voltant dels records del protagonista, Jorge, en dues etapes de la seua vida (als 17 i als 26 anys) a València. Jorge es debat entre dues figures femenines: Pepita, una jove valenciana ingènua, tímida i idealitzada que coneix des de l'adolescència, i Donya Luisa, la jove i elegant marquesa viuda de Dos Aguas. Durant una vetlada al Palau del Marqués de Dos Aguas, Jorge i Luisa exploren els passadissos i estances secretes de l'edifici. Un accident amb un conjunt d'antics autòmats i un cavall mecànicament descontrolat provoca la mort de Luisa i deixa Jorge en un coma de dos dies. Durant aqueix lapse, Jorge experimenta una vivència espectral creient-se un fantasma junt amb l'esperit de Luisa. Després de despertar, acaba casant-se amb Pepita i traslladant-se a un castell a Gandia, condemnat a viure dividit entre la presència terrenal de la seua esposa i l'ombra constant i invisible de Luisa.</p></div>
+       <button class="more" onclick="toggleMore(this)" aria-label="+">+</button>
+      <div class="card-actions">
+        <a class="btn ghost" href="#" onclick="return fakeLink(event)">Descarregar prova de lectura</a>
+        <a class="btn solid" href="https://buy.stripe.com/3cIaEZ4zl4iZ4VyevX2Fa03" target="_blank" rel="noopener">Adquirir-lo · 8,00 €</a>
+        
+      </div>
+    </div>
+  </article><article class="card">
+    <div class="book"><div class="cover b-red3">
+    <span class="ctitle">La Immaculada Concepció dels Papes</span>
+    <div class="cband">
+      <span class="cauthor">Oskar Panizza</span>
+      <span class="cpublisher">Editorial Safranar</span>
+    </div>
+  </div></div>
+    <div class="card-info">
+      <p class="card-meta">Col·lecció Literatura, 3 i 4 · Edició bilingüe valencià/català i castellà · EPUB / PDF · ISBN: 978-84-09-94076-9</p>
+      <h3>La Immaculada Concepció dels Papes</h3>
+      <p class="author">Oskar Panizza</p>
+      <p class="tagline">«El llibre més intel·ligentment anticlerical d'un autor maleït»</p>
+      <div class="blurb clamped"><p>Aquesta és una obra fonamental d'Oskar Panizza, conegut per l'obra de teatre <em>El concili de l'amor</em>, que li valgué la persecució per impietat de l'Estat prussià. Ací, Panizza es presenta com el traductor i anotador d'una suposada obra del germà Martí, un monjo benedictí de Montserrat, que argumenta i dona proves teològiques sobre la Immaculada Concepció dels Papes. Es repassen les fonts historico-religioses, s'analitza el dogma de la Immaculada Concepció, explorant tant l'origen com l'evolució doctrinal entorn de la figura de la Verge Maria i la seua naturalesa exempta de pecat original. L'obra examina també la figura i omnipotència dels Papes, equiparant-ne l'autoritat i creació contínua amb poders divins dins de la jerarquia de l'Església Catòlica. A més, es detallen diverses etapes teològiques, debats escolàstics i moments clau de la història eclesiàstica per argumentar com el poder papal i la gràcia divina s'estenen tant sobre la terra com en l'espai i el passat. Finalment, els textos reflecteixen la controvèrsia i l'acceptació dogmàtica d'aquests misteris a través dels segles, culminant en les proclamacions oficials de Pius IX a Roma. L'obra, per tant, és una magistral obra irònica, que es caracteritza per la finor dels raonaments i els coneixements teològics de Panizza, que pretén defugir de la censura amb la forma d'una traducció d'una obra en altra llengua. Un monument del pensament laic i antieclesiàstic.</p></div>
+       <button class="more" onclick="toggleMore(this)" aria-label="+">+</button>
+      <div class="card-actions">
+        <a class="btn ghost" href="#" onclick="return fakeLink(event)">Descarregar prova de lectura</a>
+        <a class="btn solid" href="https://buy.stripe.com/dRmaEZ3vh4iZco01Jb2Fa02" target="_blank" rel="noopener">Adquirir-lo (val.) · 8,00 €</a>
+        <a class="btn solid" href="https://buy.stripe.com/9B6fZj4zl8zf0FibjL2Fa01" target="_blank" rel="noopener">Adquirir-lo (cast.) · 8,00 €</a>
+        <a class="btn ghost" href="#" title="Oskar Panizza: Crist, sota una llum psicopatològica" onclick="return fakeLink(event)">Descàrrega lliure ↓</a>
+      </div>
+    </div>
+  </article><article class="card">
+    <div class="book"><div class="cover b-red4">
+    <span class="ctitle">Amb els cinc sentits</span>
+    <div class="cband">
+      <span class="cauthor">Francesc J. Hernàndez</span>
+      <span class="cpublisher">Editorial Safranar</span>
+    </div>
+  </div></div>
+    <div class="card-info">
+      <p class="card-meta">Col·lecció Literatura, 5 · Valencià/Català · EPUB / PDF · ISBN: 978-84-09-94075-2</p>
+      <h3>Amb els cinc sentits</h3>
+      <p class="author">Francesc J. Hernàndez</p>
+      <p class="tagline">«La vida de les persones jubilades pot ser un seguit d'aventures.»</p>
+      <div class="blurb clamped"><p>A través de cinc parts inspirades en els cinc sentits, la novel·la narra les peripecies d'un matrimoni de jubilats, format per Isabel Ivars i Bernardo Beltrán, que es veu embolicat en investigacions rocambolesques. Tot comença quan descobreixen un cadàver momificat d'un coronel franquista amagat sota l'ascensor de la finca familiar, un cas que els duu a destapar secrets del passat, connexions amb la reialesa en l'exili i vells contes infantils convertits en realitat. A partir d'aleshores, la seua aparentment tranquil·la jubilació es veu sacsejada per episodis insòlits que inclouen des d'un tiroteig en una cabana rural a Xelva, provocat per rancors de la Guerra Civil, fins a l'espionatge d'una trama d'estafa financera internacional amb agulles mèdiques intel·ligents per una finestra indiscreta del pis de damunt. El periple vital de la parella continua amb un viatge transatlàntic a Mèxic per resoldre l'hereència d'un antic lluitador de catch. Seran segrestats per narcotraficants i s'enfrontaran a la trama valenciana de l'assassinat de Trotski. En l'última part, es veuran embolicats en un assassinat a l'editorial Espigol, un assumpte de falsificacions i enveges en el qual l'assassí era el lector.</p></div>
+       <button class="more" onclick="toggleMore(this)" aria-label="+">+</button>
+      <div class="card-actions">
+        <a class="btn ghost" href="#" onclick="return fakeLink(event)">Descarregar prova de lectura</a>
+        <a class="btn solid" href="https://buy.stripe.com/fZudRbd5R02J5ZCafH2Fa00" target="_blank" rel="noopener">Adquirir-lo · 6,00 €</a>
+        
+      </div>
+    </div>
+  </article></div>
   </section>
 
   <!-- VALÈNCIA -->
   <section class="panel" id="panel-val">
     <div class="watermark">VALÈNCIA</div>
-    <p class="col-desc" data-i18n="descVal"></p>
-    <div class="grid" id="grid-val"></div>
+    <p class="col-desc" data-i18n="descVal">València, la ciutat i la seua memòria.</p>
+    <div class="grid" id="grid-val"><article class="card">
+    <div class="book"><div class="cover b-green1">
+    <span class="ctitle">Passeig per València de la mà de Joan Lluís Vives</span>
+    <div class="cband">
+      <span class="cauthor">Joan Lluís Vives · Francesc J. Hernàndez</span>
+      <span class="cpublisher">Editorial Safranar</span>
+    </div>
+  </div></div>
+    <div class="card-info">
+      <p class="card-meta">Col·lecció València, 1 i 2 · Edició bilingüe · PDF · Fotografies: Helena Dobon</p>
+      <h3>Passeig per València de la mà de Joan Lluís Vives</h3>
+      <p class="author">Joan Lluís Vives · Francesc J. Hernàndez</p>
+      <p class="tagline">«La primera ruta per València la va publicar Lluís Vives en 1539»</p>
+      <div class="blurb clamped"><p>El llibre és una invitació a llegir un escrit de Joan Lluís Vives, el diàleg que s'anomena <em>Les lleis del joc</em>, publicat en el seu <em>Exercici de Llengua Llatina</em> (1539). El text descriu un passeig per la ciutat de València, que comença a la plaça Nàpols i Sicília i finalitza en la plaça de la Mare de Déu. Pot llegir-lo i, al mateix temps, recórrer els carrers i les places que s'hi esmenten. El text del diàleg de Vives es troba en els capítols 2n, 6é, 10é, 12é, 14é i 19é del llibre; la resta de capítols són explicacions complementàries per gaudir de la prosa de l'humanista i del passeig. A la fi, hi ha un annex amb un elogi de Vives de la seua ciutat i un altre amb informació bibliogràfica. Pel que fa al text de Vives, s'ha actualitzat la traducció dels <em>Diàlegs</em> realitzada per Josep Pin i Soler i publicada a Barcelona el 1915.</p></div>
+       <button class="more" onclick="toggleMore(this)" aria-label="+">+</button>
+      <div class="card-actions">
+        <a class="btn ghost" href="#" onclick="return fakeLink(event)">Descarregar prova de lectura</a>
+        <a class="btn solid" href="#" onclick="return fakeLink(event)">Adquirir-lo · 8,00 €</a>
+        <a class="btn ghost" href="#" title="Francesc J. Hernàndez: El projecte filosòfic de Joan Lluís Vives" onclick="return fakeLink(event)">Descàrrega lliure ↓</a>
+      </div>
+    </div>
+  </article><article class="card">
+    <div class="book"><div class="cover b-green2">
+    <span class="ctitle">Ubi sunt?</span>
+    <div class="cband">
+      <span class="cauthor">Xavier Oms i Francesc J. Hernàndez</span>
+      <span class="cpublisher">Editorial Safranar</span>
+    </div>
+  </div></div>
+    <div class="card-info">
+      <p class="card-meta">Col·lecció València, 3 · Valencià/Català · Cartografia: Xavier Oms</p>
+      <h3>Ubi sunt?</h3>
+      <p class="author">Xavier Oms i Francesc J. Hernàndez</p>
+      <p class="tagline">«Un llibre imprescindible per conéixer els secrets que amaga València»</p>
+      <div class="blurb clamped"><p><em>Ubi sunt? Cementeris antics i mòmies a València</em> analitza l'evolució històrica, social i cultural dels espais de sepultura a la ciutat de València des de l'època romana fins al segle xix, prenent com a fil conductor la qüestió llatina «on estan?» en referència a la destinació dels nostres morts. Al llarg de les diferents parts de l'obra, s'estudien amb detall tant les necròpolis i els cementeris parroquials de les diverses èpoques (musulmana, jueva i cristiana) com el paper singular de determinades mòmies i restes rellevants conservades a la ciutat. L'epíleg de l'obra descriu el procés d'erradicació dels cementeris parroquials i la transició cap a la creació del nou Cementeri General a principis del segle XIX. Aquesta transformació, impulsada per criteris higienistes de la Il·lustració, va suposar una millora sanitària evident per a una ciutat que es nodria de pous, però va tenir un impacte urbanístic limitat i va alterar profundament una tradició mil·lenària de convivència quotidiana amb la mort, generant inicialment rebuig i incertesa en part de la societat valenciana.</p></div>
+       <button class="more" onclick="toggleMore(this)" aria-label="+">+</button>
+      <div class="card-actions">
+        <a class="btn ghost" href="#" onclick="return fakeLink(event)">Descarregar prova de lectura</a>
+        <a class="btn solid" href="#" onclick="return fakeLink(event)">Adquirir-lo · 8,00 €</a>
+        
+      </div>
+    </div>
+  </article></div>
+  </section>
+
+  <!-- IMPRESCINDIBLES -->
+  <section class="panel" id="panel-imp">
+    <div class="watermark">IMPRESCINDIBLES</div>
+    <p class="col-desc" data-i18n="descImp">Textos fonamentals per a entendre el segle XX.</p>
+    <div class="grid" id="grid-imp"><article class="card">
+    <div class="book"><div class="cover b-gold1">
+    <span class="ctitle">Crims contra la Humanitat</span>
+    <div class="cband">
+      <span class="cauthor">Robert H. Jackson et al.</span>
+      <span class="cpublisher">Editorial Safranar</span>
+    </div>
+  </div></div>
+    <div class="card-info">
+      <p class="card-meta">Col·lecció Imprescindibles, 1 · Valencià/Català · Trad.: Cristina Domingo i Francesc J. Hernàndez</p>
+      <h3>Crims contra la Humanitat</h3>
+      <p class="author">Robert H. Jackson et al.</p>
+      <p class="tagline">«En els al·legats dels fiscals en els Judicis de Núremberg s'encunyà el concepte de Crim contra la Humanitat. Uns textos indispensables per a entendre el Dret i la Història.»</p>
+      <div class="blurb clamped"><p>El nazisme és el feixisme desbocat. El feixisme no és una <em>filosofia</em> perquè, com va escriure Georg Lukács, qualsevol estudiant de primer curs podria refutar-la. Tampoc no és una <em>política</em>, llevat que s'elimine d'aquest concepte la referència a l'ètica que té des d'Aristòtil. El feixisme és el menyspreu per la dignitat dels éssers humans i ho acredita el nazisme i les seues bàrbares conseqüències, palesades per la història i, paradigmàticament, el conjunt d'al·legats i condemnes de les acusacions en els Judicis de Nuremberg.</p><p>Els Judicis de Nuremberg foren, en realitat, tretze processos: el principal, en el qual fou encausada la cúpula nazi, i dotze més (que es realitzaren entre el 9 de desembre de 1946 i el 13 d'abril de 1949), on respongueren per crims contra la humanitat (hi fou on s'encunyà aquest concepte) i de guerra diversos grups d'acusats. En aquest llibre arrepleguem els al·legats inicials de la fiscalia del procés principal, el document històric del dret del fiscal Jackson, i en tres d'aquests processos posteriors: el <em>Cas Mèdic</em>, el <em>Cas Milch</em> i el <em>Cas dels Einsatzgruppen</em>.</p><p>El text s'ha fixat amb la comparació de l'edició oficial en quatre volums (<em>Trials of War Criminals before the Nuernberg Military Tribunals</em>) i la transcripció realitzada per la Universitat de Harvard de les 21.718 pàgines d'aquests tres processos. S'afegeixen notes al peu dels editors i alguns annexos explicatius. L'objectiu d'aquesta publicació ja fou determinat pel fiscal en cap del procés, Robert H. Jackson: «Els mals que pretenem condemnar i castigar han sigut tan calculats, tan malignes i tan devastadors, que la civilització no pot tolerar que s'ignoren, perquè no podrà sobreviure si es repeteixen.»</p></div>
+       <button class="more" onclick="toggleMore(this)" aria-label="+">+</button>
+      <div class="card-actions">
+        <a class="btn ghost" href="#" onclick="return fakeLink(event)">Descarregar prova de lectura</a>
+        <a class="btn solid" href="#" onclick="return fakeLink(event)">Adquirir-lo · 6,00 €</a>
+        
+      </div>
+    </div>
+  </article><article class="card">
+    <div class="book"><div class="cover b-gold2">
+    <span class="ctitle">Diari del Gueto de Varsòvia</span>
+    <div class="cband">
+      <span class="cauthor">Adam Czerniakow</span>
+      <span class="cpublisher">Editorial Safranar</span>
+    </div>
+  </div></div>
+    <div class="card-info">
+      <p class="card-meta">Col·lecció Imprescindibles, 2 · Valencià/Català · Trad.: Ester Vila</p>
+      <h3>Diari del Gueto de Varsòvia</h3>
+      <p class="author">Adam Czerniakow</p>
+      <p class="tagline">«Sense dubte, un dels llibres més terribles que es poden llegir... i que s'han de llegir.»</p>
+      <div class="blurb clamped"><p>«El preludi de l'infern» és el subtítol de la traducció anglesa. En realitat, el Gueto de Varsòvia ja fou l'infern mateix, una experiència dantesca que ací observem des de la perspectiva d'un home notable, el cap del Consell Jueu de Varsòvia, Adam Czerniakow. El seu diari és, sense dubte, no només una font de coneixement històric sobre la Barbàrie i la Guerra Mundial, sinó també un document valuosíssim sobre el compromís amb la comunitat i la desesperació davant de la fatalitat, sobre els mecanismes de la violència i l'extermini.</p></div>
+       <button class="more" onclick="toggleMore(this)" aria-label="+">+</button>
+      <div class="card-actions">
+        <a class="btn ghost" href="#" onclick="return fakeLink(event)">Descarregar prova de lectura</a>
+        <a class="btn solid" href="#" onclick="return fakeLink(event)">Adquirir-lo · 6,00 €</a>
+        
+      </div>
+    </div>
+  </article><article class="card">
+    <div class="book"><div class="cover b-gold3">
+    <span class="ctitle">Ensayo para la destrucción</span>
+    <div class="cband">
+      <span class="cauthor">Paul W. Massing</span>
+      <span class="cpublisher">Editorial Safranar</span>
+    </div>
+  </div></div>
+    <div class="card-info">
+      <p class="card-meta">Col·lecció Imprescindibles, 3 · Castellà · Trad.: Francesc J. Hernàndez · Pròleg de M. Horkheimer i T. W. Adorno</p>
+      <h3>Ensayo para la destrucción</h3>
+      <p class="author">Paul W. Massing</p>
+      <p class="tagline">«El último, todavía inédito en castellano, de la serie de Estudios sobre el Prejuicio, la gran obra colectiva de la Escuela de Fráncfort en el exilio de Estados Unidos.»</p>
+      <div class="blurb clamped"><p>«Cualquiera que quiera comprender el antisemitismo totalitario no debería caer en la tentación de equiparar su explicación con una especie de necesidad natural. En retrospectiva, ciertamente parece como si tuviera que suceder así y no pudiera haber sido de otra manera. Entre las figuras famosas del pasado alemán, hasta Kant y Goethe, solo se pueden nombrar unas pocas que estaban completamente libres de sentimientos antisemitas. Pero al insistir en tal universalidad y repetir la fatalidad de lo sucedido en el concepto mismo, uno, en cierto sentido, se lo apropia. En todas partes del pasado alemán, las huellas de la catástrofe inminente van acompañadas de su opuesto, y la sabiduría de decretar ex post facto lo que era más fuerte desde el principio facilita demasiado las cosas al presuponer la realidad como el único resultado posible. En Francia, algunos de los dreyfusianos más valientes, como Zola y Anatole France, ocasionalmente incluyeron representaciones de judíos en sus novelas que se asemejaban a los mismos clichés contra cuyas consecuencias luchaban. La experiencia de la historia incluye también la conciencia de lo que no se realiza plenamente, de lo que es difuso y ambiguo.</p><p>Aquí, quizás, el libro de Massing hace una contribución crucial. Ayuda a desentrañar el nudo entre lo accidental y lo necesario, de manera racional. Si bien se centra en el potencial amorfo, omnipresente, pero nunca del todo cierto, de odio al judaísmo dentro de la población, sin deducir necesariamente una catástrofe de ello, su investigación llega al punto en que se aclara por qué prevaleció ese potencial. Demuestra con pruebas contundentes, basadas en hechos históricos, que en la Alemania de Bismarck, el antisemitismo fue manipulado políticamente y, según las exigencias del momento y los intereses del momento, se activó y desactivó. Esos levantamientos populares espontáneos del Tercer Reich, que estallaron de forma bien organizada ante una señal, tuvieron sus precursores en los movimientos de Stoecker y Ahlwardt, que fueron controlados de manera oportunista y que, con un refinado aire conservador, pudieron utilizarse para mantener la paz y el orden con la misma facilidad con la que pudieron desatarse contra la socialdemocracia. Sin negar la receptividad de las masas a tales estímulos, su grado de culpa se relativiza simultáneamente: quienes claman contra las víctimas se revelan como víctimas, como peones manipulados por el poder político. El antisemitismo se fundamenta en condiciones sociales objetivas, así como en la conciencia e inconsciencia de las masas. Pero se manifiesta como una herramienta política: como una herramienta para integrar intereses grupales divergentes; como la forma más rápida y segura de distraer la atención de una necesidad vital para la cual existen otros medios.» (Del prólogo de Max Horkheimer y Theodor W. Adorno).</p></div>
+       <button class="more" onclick="toggleMore(this)" aria-label="+">+</button>
+      <div class="card-actions">
+        <a class="btn ghost" href="#" onclick="return fakeLink(event)">Descarregar prova de lectura</a>
+        <a class="btn solid" href="#" onclick="return fakeLink(event)">Adquirir-lo · 6,00 €</a>
+        
+      </div>
+    </div>
+  </article></div>
   </section>
 
   <!-- MÚSICA -->
   <section class="panel" id="panel-mus">
     <div class="watermark">MÚSICA</div>
-    <p class="col-desc" data-i18n="descMus"></p>
+    <p class="col-desc" data-i18n="descMus">Partitures, llibrets i assaig musical.</p>
     <div class="soon">
       <div class="eq"><span></span><span></span><span></span><span></span><span></span></div>
-      <h3 data-i18n="soonTitle"></h3>
-      <p data-i18n="soonSub"></p>
+      <h3 data-i18n="soonTitle">La col·lecció Música està en preparació</h3>
+      <p data-i18n="soonSub">Pròximament: partitures, llibrets i assaigs sobre la música valenciana. De moment, pots subscriure't al butlletí per a rebre les novetats.</p>
     </div>
   </section>
 </main>
@@ -263,16 +469,16 @@
 <!-- LECTORS GRATUÏTS -->
 <section class="readers">
   <div class="readers-in">
-    <p data-i18n="readersTitle"></p>
-    <p class="paynote" data-i18n="notePay"></p>
+    <p data-i18n="readersTitle">Per a llegir els nostres llibres digitals:</p>
+    <p class="paynote" data-i18n="notePay">Totes les obres es descarreguen quan s'efectua el pagament.</p>
     <div class="rlinks">
       <a class="rlink" href="https://thorium.edrlab.org/" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
-        <span data-i18n="readerEpub"></span>
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"></path></svg>
+        <span data-i18n="readerEpub">Thorium — lector EPUB gratuït</span>
       </a>
       <a class="rlink" href="https://get.adobe.com/reader/" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
-        <span data-i18n="readerPdf"></span>
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"></path></svg>
+        <span data-i18n="readerPdf">Adobe Acrobat Reader — lector de PDF gratuït</span>
       </a>
     </div>
   </div>
@@ -282,11 +488,11 @@
   <div class="foot-in">
     <div>
       <div class="flogo"><small>EDITORIAL</small>SAFRANAR</div>
-      <span data-i18n="footTag"></span>
+      <span data-i18n="footTag">© 2026 Editorial Safranar</span>
     </div>
     <div>
-      <a href="#" onclick="return fakeLink(event)">hola@safranar.example</a><br>
-      <a href="#" onclick="return fakeLink(event)">Instagram</a> · <a href="#" onclick="return fakeLink(event)">Twitter/X</a> · <a href="#" onclick="return fakeLink(event)">Bluesky</a>
+      <a href="https://safranar.github.io/#" onclick="return fakeLink(event)">hola@safranar.example</a><br>
+      <a href="https://safranar.github.io/#" onclick="return fakeLink(event)">Instagram</a> · <a href="https://safranar.github.io/#" onclick="return fakeLink(event)">Twitter/X</a> · <a href="https://safranar.github.io/#" onclick="return fakeLink(event)">Bluesky</a>
     </div>
   </div>
 </footer>
@@ -296,178 +502,364 @@
 <script>
 /* ============================== DADES ============================== */
 const UI = {
-  ca:{ colTitle:"Col·leccions:", tabLit:"Literatura", tabVal:"València", tabMus:"Música",
-    descVal:"València, la ciutat i la seua memòria.",
-    descMus:"Partitures, llibrets i assaig musical.",
-    dl:"Descarregar prova de lectura", buy:"Adquirir-lo", freeDl:"Descàrrega lliure",
-    readersTitle:"Per a llegir els nostres llibres digitals:",
-    notePay:"Totes les obres es descarreguen quan s'efectua el pagament.",
-    readerEpub:"Thorium — lector EPUB gratuït",
-    readerPdf:"Adobe Acrobat Reader — lector de PDF gratuït",
-    soonTitle:"La col·lecció Música està en preparació",
-    soonSub:"Pròximament: partitures, llibrets i assaigs sobre la música valenciana. De moment, pots subscriure't al butlletí per a rebre les novetats.",
-    footTag:"© 2026 Editorial Safranar",
-    toast:"Enllaç de demostració — disponible prompte" },
-  es:{ colTitle:"Colecciones:", tabLit:"Literatura", tabVal:"València", tabMus:"Música",
-    descVal:"València, la ciudad y su memoria.",
-    descMus:"Partituras, libretos y ensayo musical.",
-    dl:"Descargar prueba de lectura", buy:"Adquirirlo", freeDl:"Descarga libre",
-    readersTitle:"Para leer nuestros libros digitales:",
-    notePay:"Todas las obras se descargan cuando se efectúa el pago.",
-    readerEpub:"Thorium — lector EPUB gratuito",
-    readerPdf:"Adobe Acrobat Reader — lector de PDF gratuito",
-    soonTitle:"La colección Música está en preparación",
-    soonSub:"Próximamente: partituras, libretos y ensayos sobre la música valenciana. Mientras tanto, puedes suscribirte al boletín para recibir las novedades.",
-    footTag:"© 2026 Editorial Safranar",
-    toast:"Enlace de demostración — disponible pronto" },
-  fr:{ colTitle:"Collections :", tabLit:"Littérature", tabVal:"València", tabMus:"Musique",
-    descVal:"Valence, la ville et sa mémoire.",
-    descMus:"Partitions, livrets et essais musicaux.",
-    dl:"Télécharger un extrait de lecture", buy:"L'acquérir", freeDl:"Téléchargement libre",
-    readersTitle:"Pour lire nos livres numériques :",
-    notePay:"Toutes les œuvres se téléchargent lorsque le paiement est effectué.",
-    readerEpub:"Thorium — lecteur EPUB gratuit",
-    readerPdf:"Adobe Acrobat Reader — lecteur PDF gratuit",
-    soonTitle:"La collection Musique est en préparation",
-    soonSub:"Bientôt : partitions, livrets et essais sur la musique valencienne. En attendant, abonnez-vous à la lettre d'information pour recevoir les nouveautés.",
-    footTag:"© 2026 Éditions Safranar",
-    toast:"Lien de démonstration — bientôt disponible" },
-  en:{ colTitle:"Collections:", tabLit:"Literature", tabVal:"València", tabMus:"Music",
-    descVal:"València, the city and its memory.",
-    descMus:"Scores, librettos and music essays.",
-    dl:"Download reading excerpt", buy:"Acquire it", freeDl:"Free download",
-    readersTitle:"To read our digital books:",
-    notePay:"All works are downloaded once payment is made.",
-    readerEpub:"Thorium — free EPUB reader",
-    readerPdf:"Adobe Acrobat Reader — free PDF reader",
-    soonTitle:"The Music collection is in preparation",
-    soonSub:"Coming soon: scores, librettos and essays on Valencian music. In the meantime, subscribe to the newsletter to hear about new releases.",
-    footTag:"© 2026 Safranar Publishing",
-    toast:"Demo link — coming soon" },
-  de:{ colTitle:"Reihen:", tabLit:"Literatur", tabVal:"València", tabMus:"Musik",
-    descVal:"València, die Stadt und ihr Gedächtnis.",
-    descMus:"Partituren, Libretti und musikalische Essays.",
-    dl:"Leseprobe herunterladen", buy:"Erwerben", freeDl:"Freier Download",
-    readersTitle:"Um unsere digitalen Bücher zu lesen:",
-    notePay:"Alle Werke werden nach Zahlungseingang heruntergeladen.",
-    readerEpub:"Thorium – kostenloser EPUB-Reader",
-    readerPdf:"Adobe Acrobat Reader – kostenloser PDF-Reader",
-    soonTitle:"Die Musik-Reihe ist in Vorbereitung",
-    soonSub:"Bald: Partituren, Libretti und Essays zur valencianischen Musik. Abonniere den Newsletter, um über Neuerscheinungen informiert zu werden.",
-    footTag:"© 2026 Verlag Safranar",
-    toast:"Demo-Link — bald verfügbar" }
+  "ca": {
+    "colTitle": "Col·leccions:",
+    "tabLit": "Literatura",
+    "tabVal": "València",
+    "tabMus": "Música",
+    "tabImp": "Imprescindibles",
+    "descVal": "València, la ciutat i la seua memòria.",
+    "descMus": "Partitures, llibrets i assaig musical.",
+    "descImp": "Textos fonamentals per a entendre el segle XX.",
+    "dl": "Descarregar prova de lectura",
+    "buy": "Adquirir-lo",
+    "buyVal": "val.",
+    "buyCast": "cast.",
+    "freeDl": "Descàrrega lliure",
+    "readersTitle": "Per a llegir els nostres llibres digitals:",
+    "notePay": "Totes les obres es descarreguen quan s'efectua el pagament.",
+    "readerEpub": "Thorium — lector EPUB gratuït",
+    "readerPdf": "Adobe Acrobat Reader — lector de PDF gratuït",
+    "soonTitle": "La col·lecció Música està en preparació",
+    "soonSub": "Pròximament: partitures, llibrets i assaigs sobre la música valenciana. De moment, pots subscriure't al butlletí per a rebre les novetats.",
+    "footTag": "© 2026 Editorial Safranar",
+    "toast": "Enllaç de demostració — disponible prompte"
+  },
+  "es": {
+    "colTitle": "Colecciones:",
+    "tabLit": "Literatura",
+    "tabVal": "València",
+    "tabMus": "Música",
+    "tabImp": "Imprescindibles",
+    "descVal": "València, la ciudad y su memoria.",
+    "descMus": "Partituras, libretos y ensayo musical.",
+    "descImp": "Textos fundamentales para entender el siglo XX.",
+    "dl": "Descargar prueba de lectura",
+    "buy": "Adquirirlo",
+    "buyVal": "val.",
+    "buyCast": "cast.",
+    "freeDl": "Descarga libre",
+    "readersTitle": "Para leer nuestros libros digitales:",
+    "notePay": "Todas las obras se descargan cuando se efectúa el pago.",
+    "readerEpub": "Thorium — lector EPUB gratuito",
+    "readerPdf": "Adobe Acrobat Reader — lector de PDF gratuito",
+    "soonTitle": "La colección Música está en preparación",
+    "soonSub": "Próximamente: partituras, libretos y ensayos sobre la música valenciana. Mientras tanto, puedes suscribirte al boletín para recibir las novedades.",
+    "footTag": "© 2026 Editorial Safranar",
+    "toast": "Enlace de demostración — disponible pronto"
+  },
+  "fr": {
+    "colTitle": "Collections :",
+    "tabLit": "Littérature",
+    "tabVal": "València",
+    "tabMus": "Musique",
+    "tabImp": "Indispensables",
+    "descVal": "Valence, la ville et sa mémoire.",
+    "descMus": "Partitions, livrets et essais musicaux.",
+    "descImp": "Des textes fondamentaux pour comprendre le XXe siècle.",
+    "dl": "Télécharger un extrait de lecture",
+    "buy": "L'acquérir",
+    "buyVal": "val.",
+    "buyCast": "esp.",
+    "freeDl": "Téléchargement libre",
+    "readersTitle": "Pour lire nos livres numériques :",
+    "notePay": "Toutes les œuvres se téléchargent lorsque le paiement est effectué.",
+    "readerEpub": "Thorium — lecteur EPUB gratuit",
+    "readerPdf": "Adobe Acrobat Reader — lecteur PDF gratuit",
+    "soonTitle": "La collection Musique est en préparation",
+    "soonSub": "Bientôt : partitions, livrets et essais sur la musique valencienne. En attendant, abonnez-vous à la lettre d'information pour recevoir les nouveautés.",
+    "footTag": "© 2026 Éditions Safranar",
+    "toast": "Lien de démonstration — bientôt disponible"
+  },
+  "en": {
+    "colTitle": "Collections:",
+    "tabLit": "Literature",
+    "tabVal": "València",
+    "tabMus": "Music",
+    "tabImp": "Essentials",
+    "descVal": "València, the city and its memory.",
+    "descMus": "Scores, librettos and music essays.",
+    "descImp": "Essential texts for understanding the 20th century.",
+    "dl": "Download reading excerpt",
+    "buy": "Acquire it",
+    "buyVal": "Val.",
+    "buyCast": "Sp.",
+    "freeDl": "Free download",
+    "readersTitle": "To read our digital books:",
+    "notePay": "All works are downloaded once payment is made.",
+    "readerEpub": "Thorium — free EPUB reader",
+    "readerPdf": "Adobe Acrobat Reader — free PDF reader",
+    "soonTitle": "The Music collection is in preparation",
+    "soonSub": "Coming soon: scores, librettos and essays on Valencian music. In the meantime, subscribe to the newsletter to hear about new releases.",
+    "footTag": "© 2026 Safranar Publishing",
+    "toast": "Demo link — coming soon"
+  },
+  "de": {
+    "colTitle": "Reihen:",
+    "tabLit": "Literatur",
+    "tabVal": "València",
+    "tabMus": "Musik",
+    "tabImp": "Unverzichtbares",
+    "descVal": "València, die Stadt und ihr Gedächtnis.",
+    "descMus": "Partituren, Libretti und musikalische Essays.",
+    "descImp": "Grundlegende Texte zum Verständnis des 20. Jahrhunderts.",
+    "dl": "Leseprobe herunterladen",
+    "buy": "Erwerben",
+    "buyVal": "val.",
+    "buyCast": "span.",
+    "freeDl": "Freier Download",
+    "readersTitle": "Um unsere digitalen Bücher zu lesen:",
+    "notePay": "Alle Werke werden nach Zahlungseingang heruntergeladen.",
+    "readerEpub": "Thorium – kostenloser EPUB-Reader",
+    "readerPdf": "Adobe Acrobat Reader – kostenloser PDF-Reader",
+    "soonTitle": "Die Musik-Reihe ist in Vorbereitung",
+    "soonSub": "Bald: Partituren, Libretti und Essays zur valencianischen Musik. Abonniere den Newsletter, um über Neuerscheinungen informiert zu werden.",
+    "footTag": "© 2026 Verlag Safranar",
+    "toast": "Demo-Link — bald verfügbar"
+  }
 };
 
 const BOOKS = [
   {
-    col:'lit', band:'b-red1', author:'Walter Gorrish', price:'8,00 €',
-    labelCa:"Literatura · 1", titleCa:"Cinc casquets de cartutxos",
-    meta:{
-      ca:"Col·lecció Literatura, 1 · Valencià/Català · EPUB · Trad. de l'alemany: F. J. Hernàndez",
-      es:"Colección Literatura, 1 · Valencià/Català · EPUB · Trad. del alemán: F. J. Hernàndez",
-      fr:"Collection Littérature, 1 · Valencien/Catalan · EPUB · Trad. de l'allemand : F. J. Hernàndez",
-      en:"Literature Collection, 1 · Valencian/Catalan · EPUB · Trans. from the German: F. J. Hernàndez",
-      de:"Reihe Literatur, 1 · Valencianisch/Katalanisch · EPUB · Aus dem Deutschen: F. J. Hernàndez" },
-    blurb:{
-      ca:"<em>Cinc casquets de cartutxos</em> de Walter Gorrish és un guió cinematogràfic que adapta la pròpia experiència de l'autor a les Brigades Internacionals durant la Guerra Civil Espanyola. La història segueix un grup de set combatents estrangers i espanyols que, a la primavera de 1938 al Front de l'Ebre, reben la perillosa missió de cobrir la retirada del seu batalló sense munició ni provisions. Assetjats per la set, la fam i les tropes feixistes, els protagonistes guarden fragments d'un mapa estratègic en casquets de bala per fer-lo arribar a l'estat major. Al llarg de la trama, personatges clau com el comandant Sander i l'operador de ràdio Wasja sacrifiquen les seues vides per la causa antifeixista. Finalment, malgrat les pèrdues i el sofriment extrem, els supervivents aconsegueixen arribar a un riu, simbolitzant la resistència i la victòria final de la solidaritat.",
-      es:"<em>Cinco casquillos de bala</em> de Walter Gorrish es un guión cinematográfico que adapta la propia experiencia del autor en las Brigadas Internacionales durante la Guerra Civil Española. La historia sigue a un grupo de siete combatientes extranjeros y españoles que, en la primavera de 1938 en el Frente del Ebro, reciben la peligrosa misión de cubrir la retirada de su batallón sin munición ni provisiones. Asediados por la sed, el hambre y las tropas fascistas, los protagonistas guardan fragmentos de un mapa estratégico en casquillos de bala para hacerlo llegar al estado mayor. A lo largo de la trama, personajes clave como el comandante Sander y el operador de radio Wasja sacrifican sus vidas por la causa antifascista. Finalmente, a pesar de las pérdidas y el sufrimiento extremo, los supervivientes logran llegar a un río, simbolizando la resistencia y la victoria final de la solidaridad.",
-      fr:"<em>Cinc casquets de cartutxos</em> de Walter Gorrish est un scénario cinématographique qui adapte la propre expérience de l'auteur aux Brigades internationales pendant la guerre civile espagnole. L'histoire suit un groupe de sept combattants étrangers et espagnols qui, au printemps 1938 sur le front de l'Èbre, reçoivent la dangereuse mission de couvrir la retraite de leur bataillon sans munitions ni provisions. Assoiffés, affamés et harcelés par les troupes fascistes, les protagonistes cachent des fragments d'une carte stratégique dans des douilles pour la faire parvenir à l'état-major. Au fil de l'intrigue, des personnages clés comme le commandant Sander et le radiotélégraphiste Wasja sacrifient leur vie pour la cause antifasciste. Finalement, malgré les pertes et la souffrance extrême, les survivants parviennent à une rivière, symbole de la résistance et de la victoire finale de la solidarité.",
-      en:"<em>Cinc casquets de cartutxos</em> by Walter Gorrish is a film script that adapts the author's own experience in the International Brigades during the Spanish Civil War. The story follows a group of seven foreign and Spanish fighters who, in the spring of 1938 on the Ebro front, are given the dangerous mission of covering their battalion's retreat with no ammunition or supplies. Harassed by thirst, hunger and fascist troops, the protagonists hide fragments of a strategic map inside bullet casings to get it to headquarters. Over the course of the plot, key characters such as Commander Sander and the radio operator Wasja sacrifice their lives for the antifascist cause. Finally, despite their losses and extreme suffering, the survivors reach a river, symbolising resistance and the ultimate victory of solidarity.",
-      de:"<em>Cinc casquets de cartutxos</em> von Walter Gorrish ist ein Filmmanuskript, das die eigenen Erfahrungen des Autors in den Internationalen Brigaden während des Spanischen Bürgerkriegs verarbeitet. Die Geschichte folgt einer Gruppe von sieben ausländischen und spanischen Kämpfern, die im Frühjahr 1938 an der Ebro-Front den gefährlichen Auftrag erhalten, den Rückzug ihres Bataillons ohne Munition und Proviant zu decken. Von Durst, Hunger und faschistischen Truppen bedrängt, verstecken die Protagonisten Fragmente einer strategischen Karte in Patronenhülsen, um sie zum Stab zu bringen. Im Verlauf der Handlung opfern Schlüsselfiguren wie der Kommandant Sander und der Funker Wasja ihr Leben für die antifaschistische Sache. Am Ende erreichen die Überlebenden trotz der Verluste und extremen Leiden einen Fluss – Sinnbild des Widerstands und des endgültigen Sieges der Solidarität." }
+    "col": "lit",
+    "band": "b-red1",
+    "author": "Walter Gorrish",
+    "price": "8,00 €",
+    "labelCa": "Literatura · 1",
+    "titleCa": "Cinc casquets de cartutxos",
+    "meta": {
+      "ca": "Col·lecció Literatura, 1 · Valencià/Català · EPUB · Trad. de l'alemany: F. J. Hernàndez",
+      "es": "Colección Literatura, 1 · Valencià/Català · EPUB · Trad. del alemán: F. J. Hernàndez",
+      "fr": "Collection Littérature, 1 · Valencien/Catalan · EPUB · Trad. de l'allemand : F. J. Hernàndez",
+      "en": "Literature Collection, 1 · Valencian/Catalan · EPUB · Trans. from the German: F. J. Hernàndez",
+      "de": "Reihe Literatur, 1 · Valencianisch/Katalanisch · EPUB · Aus dem Deutschen: F. J. Hernàndez"
+    },
+    "blurb": {
+      "ca": "<em>Cinc casquets de cartutxos</em> de Walter Gorrish és un guió cinematogràfic que adapta la pròpia experiència de l'autor a les Brigades Internacionals durant la Guerra Civil Espanyola. La història segueix un grup de set combatents estrangers i espanyols que, a la primavera de 1938 al Front de l'Ebre, reben la perillosa missió de cobrir la retirada del seu batalló sense munició ni provisions. Assetjats per la set, la fam i les tropes feixistes, els protagonistes guarden fragments d'un mapa estratègic en casquets de bala per fer-lo arribar a l'estat major. Al llarg de la trama, personatges clau com el comandant Sander i l'operador de ràdio Wasja sacrifiquen les seues vides per la causa antifeixista. Finalment, malgrat les pèrdues i el sofriment extrem, els supervivents aconsegueixen arribar a un riu, simbolitzant la resistència i la victòria final de la solidaritat internacional.",
+      "es": "<em>Cinco casquillos de bala</em> de Walter Gorrish es un guión cinematográfico que adapta la propia experiencia del autor en las Brigadas Internacionales durante la Guerra Civil Española. La historia sigue a un grupo de siete combatientes extranjeros y españoles que, en la primavera de 1938 en el Frente del Ebro, reciben la peligrosa misión de cubrir la retirada de su batallón sin munición ni provisiones. Asediados por la sed, el hambre y las tropas fascistas, los protagonistas guardan fragmentos de un mapa estratégico en casquillos de bala para hacerlo llegar al estado mayor. A lo largo de la trama, personajes clave como el comandante Sander y el operador de radio Wasja sacrifican sus vidas por la causa antifascista. Finalmente, a pesar de las pérdidas y el sufrimiento extremo, los supervivientes logran llegar a un río, simbolizando la resistencia y la victoria final de la solidaridad internacional.",
+      "fr": "<em>Cinc casquets de cartutxos</em> de Walter Gorrish est un scénario cinématographique qui adapte la propre expérience de l'auteur aux Brigades internationales pendant la guerre civile espagnole. L'histoire suit un groupe de sept combattants étrangers et espagnols qui, au printemps 1938 sur le front de l'Èbre, reçoivent la dangereuse mission de couvrir la retraite de leur bataillon sans munitions ni provisions. Assoiffés, affamés et harcelés par les troupes fascistes, les protagonistes cachent des fragments d'une carte stratégique dans des douilles pour la faire parvenir à l'état-major. Au fil de l'intrigue, des personnages clés comme le commandant Sander et le radiotélégraphiste Wasja sacrifient leur vie pour la cause antifasciste. Finalement, malgré les pertes et la souffrance extrême, les survivants parviennent à une rivière, symbole de la résistance et de la victoire finale de la solidarité internationale.",
+      "en": "<em>Cinc casquets de cartutxos</em> by Walter Gorrish is a film script that adapts the author's own experience in the International Brigades during the Spanish Civil War. The story follows a group of seven foreign and Spanish fighters who, in the spring of 1938 on the Ebro front, are given the dangerous mission of covering their battalion's retreat with no ammunition or supplies. Harassed by thirst, hunger and fascist troops, the protagonists hide fragments of a strategic map inside bullet casings to get it to headquarters. Over the course of the plot, key characters such as Commander Sander and the radio operator Wasja sacrifice their lives for the antifascist cause. Finally, despite their losses and extreme suffering, the survivors reach a river, symbolising resistance and the ultimate victory of international solidarity.",
+      "de": "<em>Cinc casquets de cartutxos</em> von Walter Gorrish ist ein Filmmanuskript, das die eigenen Erfahrungen des Autors in den Internationalen Brigaden während des Spanischen Bürgerkriegs verarbeitet. Die Geschichte folgt einer Gruppe von sieben ausländischen und spanischen Kämpfern, die im Frühjahr 1938 an der Ebro-Front den gefährlichen Auftrag erhalten, den Rückzug ihres Bataillons ohne Munition und Proviant zu decken. Von Durst, Hunger und faschistischen Truppen bedrängt, verstecken die Protagonisten Fragmente einer strategischen Karte in Patronenhülsen, um sie zum Stab zu bringen. Im Verlauf der Handlung opfern Schlüsselfiguren wie der Kommandant Sander und der Funker Wasja ihr Leben für die antifaschistische Sache. Am Ende erreichen die Überlebenden trotz der Verluste und extremen Leiden einen Fluss – Sinnbild des Widerstands und des endgültigen Sieges der internationalen Solidarität."
+    },
+    "stripe": "https://buy.stripe.com/3cI4gB0j5g1H87KdrT2Fa04",
+    "tag": {
+      "ca": "Una excel·lent obra literària, encara inèdita, sobre la Guerra de 1936-1939"
+    },
+    "isbn": "978-84-09-94078-3"
   },
   {
-    col:'lit', band:'b-red2', author:'Adolphe Falgairolle · Georges Pillement', price:'8,00 €',
-    labelCa:"Literatura · 2", titleCa:"Dos novelas sobre Valencia",
-    meta:{
-      ca:"Col·lecció Literatura, 2 · Castellà · EPUB · Trad. del francès, notes i epíleg: T. Gorriá i F. J. Hernàndez",
-      es:"Colección Literatura, 2 · Castellano · EPUB · Trad. del francés, notas y epílogo: T. Gorriá y F. J. Hernàndez",
-      fr:"Collection Littérature, 2 · Espagnol · EPUB · Trad. du français, notes et épilogue : T. Gorriá et F. J. Hernàndez",
-      en:"Literature Collection, 2 · Spanish · EPUB · Trans. from French, notes and epilogue: T. Gorriá & F. J. Hernàndez",
-      de:"Reihe Literatur, 2 · Spanisch · EPUB · Aus dem Französischen, Anm. u. Epilog: T. Gorriá u. F. J. Hernàndez" },
-    blurb:{
-      ca:"<em>¡Valencia! Amores de España</em> (1928), d'Adolphe Falgairolle, narra en primera persona les vivències de Jean, un cineasta francés que passa les seues estances entre les cims pirinenques de Torrebuena i la ciutat de València amb la família de Don Cristóbal Águilas. Don Cristóbal té cinc filles de dos matrimonis: per una banda, les bessones Amparo i Dorita, caracteritzades per la seua aparent inèrcia i nihilisme quotidià; per altra, Teresa, una jove decidida i vital. Jean entaula un profund llaç sentimental amb Teresa. Tanmateix, la precària situació econòmica de Don Cristóbal empeny Teresa a casar-se per conveniència amb un ric industrial català. Temps després, Jean i Teresa reprenguen la seua passió clandestina a París i València. Les germanastres Amparo i Dorita, actuant com a observadores manipuladores, descobreixen el romanç i delaten la parella, provocant que Teresa siga reclosa al convent de Santa Agripina. Finalment, Jean, amb la col·laboració del seu amic Antonio i mitjançant falses declaracions i influències, aconsegueix rescatar Teresa i fugir amb ella en barco cap a…\nPàg\n<em>Valencia entre dos sueños</em> (1931), de Georges Pillement, és una obra de tall líric, nostàlgic i al·lucinatori, estructurada al voltant dels records del protagonista, Jorge, en dues etapes de la seua vida (als 17 i als 26 anys) a València. Jorge es debat entre dues figures femenines: Pepita, una jove valenciana ingènua, tímida i idealitzada que coneix des de l'adolescència, i Donya Luisa, la jove i elegant marquesa viuda de Dos Aguas. Durant una vetlada al Palau del Marqués de Dos Aguas, Jorge i Luisa exploren els passadissos i estances secretes de l'edifici. Un accident amb un conjunt d'antics autòmats i un cavall mecànicament descontrolat provoca la mort de Luisa i deixa Jorge en un coma de dos dies. Durant aqueix lapse, Jorge experimenta una vivència espectral creient-se un fantasma junt amb l'esperit de Luisa. Després de despertar, acaba casant-se amb Pepita i traslladant-se a un castell a Gandia, condemnat a viure dividit entre la presència terrenal de la seua esposa i l'ombra constant i invisible de…",
-      es:"Pàg\n<em>¡Valencia! Amores de España</em> (1928), de Adolphe Falgairolle narra en primera persona las vivencias de Jean, un cineasta francés que pasa sus estancias entre las cumbres pirenaicas de Torrebuena y la ciudad de Valencia con la familia de Don Cristóbal Águilas. Don Cristóbal tiene cinco hijas de dos matrimonios: por un lado, las gemelas Amparo y Dorita, caracterizadas por su aparente inercia y nihilismo cotidiano; por otro, Teresa, una joven decidida y vital. Jean entabla un profundo lazo sentimental con Teresa. Sin embargo, la precaria situación económica de Don Cristóbal empuja a Teresa a casarse por conveniencia con un rico industrial catalán. Tiempo después, Jean y Teresa reanudan su pasión clandestina en París y Valencia. Las hermanastras Amparo y Dorita, actuando como observadoras manipuladoras, descubren el romance y delatan a la pareja, provocando que Teresa sea recluida en el convento de Santa Agripina. Finalmente, Jean, con la colaboración de su amigo Antonio y mediante falsas declaraciones e influencias, logra rescatar a Teresa y huir con ella en barco hacia…\nPàg\n<em>Valencia entre dos sueños</em> (1931), de Georges Pillement es una obra de corte lírico, nostálgico y alucinatorio, estructurada en torno a los recuerdos del protagonista, Jorge, en dos etapas de su vida (a los 17 y a los 26 años) en Valencia. Jorge se debate entre dos figuras femeninas: Pepita, una joven valenciana ingenua, tímida e idealizada a la que conoce desde la adolescencia y Doña Luisa, la joven y elegante marquesa viuda de Dos Aguas. Durante una velada en el Palacio del Marqués de Dos Aguas, Jorge y Luisa exploran los pasadizos y estancias secretas del edificio. Un accidente con un conjunto de antiguos autómatas y un caballo mecánicamente descontrolado provoca la muerte de Luisa y deja a Jorge en un coma de dos días. Durante ese lapso, Jorge experimenta una vivencia espectral creyéndose un fantasma junto al espíritu de Luisa. Tras despertar, termina casándose con Pepita y trasladándose a un castillo en Gandía, condenado a vivir dividido entre la presencia terrenal de su esposa y la sombra constante e invisible de…",
-      fr:"Pàg\n<em>¡Valencia! Amours d'Espagne</em> (1928), d'Adolphe Falgairolle, raconte à la première personne les expériences de Jean, un cinéaste français qui passe ses séjours entre les sommets pyrénéens de Torrebuena et la ville de Valence, auprès de la famille de Don Cristóbal Águilas. Don Cristóbal a cinq filles de deux mariages : d'un côté les jumelles Amparo et Dorita, caractérisées par leur inertie apparente et leur nihilisme quotidien ; de l'autre Teresa, une jeune femme décidée et pleine de vie. Jean noue un profond lien sentimental avec Teresa. Cependant, la situation économique précaire de Don Cristóbal pousse Teresa à se marier par convenance avec un riche industriel catalan. Plus tard, Jean et Teresa reprennent leur passion clandestine à Paris et Valence. Les demi-sœurs Amparo et Dorita, observatrices manipulatrices, découvrent la romance et dénoncent le couple, provoquant l'enfermement de Teresa au couvent de Santa Agripina. Finalement, Jean, avec l'aide de son ami Antonio et grâce à de fausses déclarations et des relations, parvient à délivrer Teresa et à s'enfuir avec elle en bateau vers…\nPàg\n<em>Valencia entre deux rêves</em> (1931), de Georges Pillement, est une œuvre lyrique, nostalgique et hallucinatoire, structurée autour des souvenirs du protagoniste, Jorge, à deux étapes de sa vie (à 17 et 26 ans) à Valence. Jorge oscille entre deux figures féminines : Pepita, une jeune Valencienne naïve, timide et idéalisée, qu'il connaît depuis l'adolescence, et Doña Luisa, la jeune et élégante marquise veuve de Dos Aguas. Lors d'une soirée au palais du marquis de Dos Aguas, Jorge et Luisa explorent les passages et les pièces secrètes du bâtiment. Un accident avec d'anciens automates et un cheval mécanique incontrôlé provoque la mort de Luisa et plonge Jorge dans un coma de deux jours. Pendant ce laps de temps, Jorge vit une expérience spectrale, se croyant un fantôme aux côtés de l'esprit de Luisa. Au réveil, il finit par épouser Pepita et s'installer dans un château à Gandia, condamné à vivre partagé entre la présence terrestre de son épouse et l'ombre constante et invisible de…",
-      en:"Pàg\n<em>¡Valencia! Amores de España</em> (1928), by Adolphe Falgairolle, tells in the first person the experiences of Jean, a French filmmaker who spends his time between the Pyrenean peaks of Torrebuena and the city of Valencia with the family of Don Cristóbal Águilas. Don Cristóbal has five daughters from two marriages: on one side, the twins Amparo and Dorita, characterised by their apparent inertia and everyday nihilism; on the other, Teresa, a determined, vital young woman. Jean forms a deep emotional bond with Teresa. However, Don Cristóbal's precarious financial situation pushes Teresa into a marriage of convenience with a wealthy Catalan industrialist. Some time later, Jean and Teresa resume their clandestine passion in Paris and Valencia. The half-sisters Amparo and Dorita, acting as manipulative observers, discover the romance and denounce the couple, leading to Teresa being confined in the convent of Santa Agripina. Finally, Jean, with the help of his friend Antonio and through false statements and influence, manages to rescue Teresa and flee with her by boat towards…\nPàg\n<em>Valencia entre dos sueños</em> (1931), by Georges Pillement, is a lyrical, nostalgic and hallucinatory work, structured around the memories of the protagonist, Jorge, at two stages of his life (at 17 and 26) in Valencia. Jorge wavers between two female figures: Pepita, a naive, timid, idealised young Valencian woman he has known since adolescence, and Doña Luisa, the young and elegant widowed Marchioness of Dos Aguas. During an evening at the Palace of the Marquis of Dos Aguas, Jorge and Luisa explore the building's passageways and secret rooms. An accident involving a set of ancient automata and a mechanically uncontrolled horse causes Luisa's death and leaves Jorge in a two-day coma. During that lapse, Jorge undergoes a spectral experience, believing himself a ghost alongside Luisa's spirit. After waking, he ends up marrying Pepita and moving to a castle in Gandia, condemned to live divided between his wife's earthly presence and the constant, invisible shadow of…",
-      de:"Pàg\n<em>¡Valencia! Amores de España</em> (1928) von Adolphe Falgairolle erzählt in der Ich-Perspektive die Erlebnisse von Jean, einem französischen Filmemacher, der seine Aufenthalte zwischen den Pyrenäengipfeln von Torrebuena und der Stadt Valencia mit der Familie von Don Cristóbal Águilas verbringt. Don Cristóbal hat fünf Töchter aus zwei Ehen: einerseits die Zwillinge Amparo und Dorita, geprägt von scheinbarer Trägheit und alltäglichem Nihilismus; andererseits Teresa, eine entschlossene, lebensfrohe junge Frau. Jean geht eine tiefe emotionale Bindung mit Teresa ein. Die prekäre wirtschaftliche Lage von Don Cristóbal drängt Teresa jedoch zu einer Zweckheirat mit einem reichen katalanischen Industriellen. Einige Zeit später nehmen Jean und Teresa ihre heimliche Leidenschaft in Paris und Valencia wieder auf. Die Halbschwestern Amparo und Dorita, die als manipulative Beobachterinnen agieren, entdecken die Liebschaft und verraten das Paar, woraufhin Teresa ins Kloster Santa Agripina eingeschlossen wird. Schließlich gelingt es Jean mit Hilfe seines Freundes Antonio und durch falsche Aussagen und Beziehungen, Teresa zu befreien und mit ihr auf einem Schiff nach… zu fliehen.\nPàg\n<em>Valencia entre dos sueños</em> (1931) von Georges Pillement ist ein lyrisches, nostalgisches und halluzinatorisches Werk, das sich um die Erinnerungen des Protagonisten Jorge an zwei Lebensphasen (mit 17 und 26 Jahren) in Valencia strukturiert. Jorge schwankt zwischen zwei weiblichen Figuren: Pepita, einer naiven, scheuen, idealisierten jungen Valencianerin, die er seit der Jugend kennt, und Doña Luisa, der jungen, eleganten verwitweten Marquise von Dos Aguas. Während eines Abends im Palast des Marquis von Dos Aguas erkunden Jorge und Luisa die Gänge und geheimen Gemächer des Gebäudes. Ein Unfall mit antiken Automaten und einem mechanisch unkontrollierbaren Pferd fordert Luisas Tod und versetzt Jorge in ein zweitägiges Koma. In dieser Zeit durchlebt Jorge eine gespenstische Erfahrung und glaubt, ein Geist neben Luisas Seele zu sein. Nach dem Erwachen heiratet er Pepita und zieht auf ein Schloss in Gandia, verdammt, geteilt zu leben zwischen der irdischen Gegenwart seiner Frau und dem ständigen, unsichtbaren Schatten von…" }
+    "col": "lit",
+    "band": "b-red2",
+    "author": "Adolphe Falgairolle · Georges Pillement",
+    "price": "8,00 €",
+    "labelCa": "Literatura · 2",
+    "titleCa": "Dos novelas sobre Valencia",
+    "meta": {
+      "ca": "Col·lecció Literatura, 2 · Castellà · EPUB · Trad. del francès, notes i epíleg: T. Gorriá i F. J. Hernàndez",
+      "es": "Colección Literatura, 2 · Castellano · EPUB · Trad. del francés, notas y epílogo: T. Gorriá y F. J. Hernàndez",
+      "fr": "Collection Littérature, 2 · Espagnol · EPUB · Trad. du français, notes et épilogue : T. Gorriá et F. J. Hernàndez",
+      "en": "Literature Collection, 2 · Spanish · EPUB · Trans. from French, notes and epilogue: T. Gorriá & F. J. Hernàndez",
+      "de": "Reihe Literatur, 2 · Spanisch · EPUB · Aus dem Französischen, Anm. u. Epilog: T. Gorriá u. F. J. Hernàndez"
+    },
+    "blurb": {
+      "ca": "<em>¡Valencia! Amores de España</em> (1928), d'Adolphe Falgairolle, narra en primera persona les vivències de Jean, un cineasta francés que passa les seues estances entre les cims pirinenques de Torrebuena i la ciutat de València amb la família de Don Cristóbal Águilas. Don Cristóbal té cinc filles de dos matrimonis: per una banda, les bessones Amparo i Dorita, caracteritzades per la seua aparent inèrcia i nihilisme quotidià; per altra, Teresa, una jove decidida i vital. Jean entaula un profund llaç sentimental amb Teresa. Tanmateix, la precària situació econòmica de Don Cristóbal empeny Teresa a casar-se per conveniència amb un ric industrial català. Temps després, Jean i Teresa reprenguen la seua passió clandestina a París i València. Les germanastres Amparo i Dorita, actuant com a observadores manipuladores, descobreixen el romanç i delaten la parella, provocant que Teresa siga reclosa al convent de Santa Agripina. Finalment, Jean, amb la col·laboració del seu amic Antonio i mitjançant falses declaracions i influències, aconsegueix rescatar Teresa i fugir amb ella en barco cap a Sudamérica.\nPàg\n<em>Valencia entre dos sueños</em> (1931), de Georges Pillement, és una obra de tall líric, nostàlgic i al·lucinatori, estructurada al voltant dels records del protagonista, Jorge, en dues etapes de la seua vida (als 17 i als 26 anys) a València. Jorge es debat entre dues figures femenines: Pepita, una jove valenciana ingènua, tímida i idealitzada que coneix des de l'adolescència, i Donya Luisa, la jove i elegant marquesa viuda de Dos Aguas. Durant una vetlada al Palau del Marqués de Dos Aguas, Jorge i Luisa exploren els passadissos i estances secretes de l'edifici. Un accident amb un conjunt d'antics autòmats i un cavall mecànicament descontrolat provoca la mort de Luisa i deixa Jorge en un coma de dos dies. Durant aqueix lapse, Jorge experimenta una vivència espectral creient-se un fantasma junt amb l'esperit de Luisa. Després de despertar, acaba casant-se amb Pepita i traslladant-se a un castell a Gandia, condemnat a viure dividit entre la presència terrenal de la seua esposa i l'ombra constant i invisible de Luisa.",
+      "es": "Pàg\n<em>¡Valencia! Amores de España</em> (1928), de Adolphe Falgairolle narra en primera persona las vivencias de Jean, un cineasta francés que pasa sus estancias entre las cumbres pirenaicas de Torrebuena y la ciudad de Valencia con la familia de Don Cristóbal Águilas. Don Cristóbal tiene cinco hijas de dos matrimonios: por un lado, las gemelas Amparo y Dorita, caracterizadas por su aparente inercia y nihilismo cotidiano; por otro, Teresa, una joven decidida y vital. Jean entabla un profundo lazo sentimental con Teresa. Sin embargo, la precaria situación económica de Don Cristóbal empuja a Teresa a casarse por conveniencia con un rico industrial catalán. Tiempo después, Jean y Teresa reanudan su pasión clandestina en París y Valencia. Las hermanastras Amparo y Dorita, actuando como observadoras manipuladoras, descubren el romance y delatan a la pareja, provocando que Teresa sea recluida en el convento de Santa Agripina. Finalmente, Jean, con la colaboración de su amigo Antonio y mediante falsas declaraciones e influencias, logra rescatar a Teresa y huir con ella en barco hacia Sudamérica.\nPàg\n<em>Valencia entre dos sueños</em> (1931), de Georges Pillement es una obra de corte lírico, nostálgico y alucinatorio, estructurada en torno a los recuerdos del protagonista, Jorge, en dos etapas de su vida (a los 17 y a los 26 años) en Valencia. Jorge se debate entre dos figuras femeninas: Pepita, una joven valenciana ingenua, tímida e idealizada a la que conoce desde la adolescencia y Doña Luisa, la joven y elegante marquesa viuda de Dos Aguas. Durante una velada en el Palacio del Marqués de Dos Aguas, Jorge y Luisa exploran los pasadizos y estancias secretas del edificio. Un accidente con un conjunto de antiguos autómatas y un caballo mecánicamente descontrolado provoca la muerte de Luisa y deja a Jorge en un coma de dos días. Durante ese lapso, Jorge experimenta una vivencia espectral creyéndose un fantasma junto al espíritu de Luisa. Tras despertar, termina casándose con Pepita y trasladándose a un castillo en Gandía, condenado a vivir dividido entre la presencia terrenal de su esposa y la sombra constante e invisible de Luisa.",
+      "fr": "Pàg\n<em>¡Valencia! Amours d'Espagne</em> (1928), d'Adolphe Falgairolle, raconte à la première personne les expériences de Jean, un cinéaste français qui passe ses séjours entre les sommets pyrénéens de Torrebuena et la ville de Valence, auprès de la famille de Don Cristóbal Águilas. Don Cristóbal a cinq filles de deux mariages : d'un côté les jumelles Amparo et Dorita, caractérisées par leur inertie apparente et leur nihilisme quotidien ; de l'autre Teresa, une jeune femme décidée et pleine de vie. Jean noue un profond lien sentimental avec Teresa. Cependant, la situation économique précaire de Don Cristóbal pousse Teresa à se marier par convenance avec un riche industriel catalan. Plus tard, Jean et Teresa reprennent leur passion clandestine à Paris et Valence. Les demi-sœurs Amparo et Dorita, observatrices manipulatrices, découvrent la romance et dénoncent le couple, provoquant l'enfermement de Teresa au couvent de Santa Agripina. Finalement, Jean, avec l'aide de son ami Antonio et grâce à de fausses déclarations et des relations, parvient à délivrer Teresa et à s'enfuir avec elle en bateau vers l'Amérique du Sud.\nPàg\n<em>Valencia entre deux rêves</em> (1931), de Georges Pillement, est une œuvre lyrique, nostalgique et hallucinatoire, structurée autour des souvenirs du protagoniste, Jorge, à deux étapes de sa vie (à 17 et 26 ans) à Valence. Jorge oscille entre deux figures féminines : Pepita, une jeune Valencienne naïve, timide et idéalisée, qu'il connaît depuis l'adolescence, et Doña Luisa, la jeune et élégante marquise veuve de Dos Aguas. Lors d'une soirée au palais du marquis de Dos Aguas, Jorge et Luisa explorent les passages et les pièces secrètes du bâtiment. Un accident avec d'anciens automates et un cheval mécanique incontrôlé provoque la mort de Luisa et plonge Jorge dans un coma de deux jours. Pendant ce laps de temps, Jorge vit une expérience spectrale, se croyant un fantôme aux côtés de l'esprit de Luisa. Au réveil, il finit par épouser Pepita et s'installer dans un château à Gandia, condamné à vivre partagé entre la présence terrestre de son épouse et l'ombre constante et invisible de Luisa.",
+      "en": "Pàg\n<em>¡Valencia! Amores de España</em> (1928), by Adolphe Falgairolle, tells in the first person the experiences of Jean, a French filmmaker who spends his time between the Pyrenean peaks of Torrebuena and the city of Valencia with the family of Don Cristóbal Águilas. Don Cristóbal has five daughters from two marriages: on one side, the twins Amparo and Dorita, characterised by their apparent inertia and everyday nihilism; on the other, Teresa, a determined, vital young woman. Jean forms a deep emotional bond with Teresa. However, Don Cristóbal's precarious financial situation pushes Teresa into a marriage of convenience with a wealthy Catalan industrialist. Some time later, Jean and Teresa resume their clandestine passion in Paris and Valencia. The half-sisters Amparo and Dorita, acting as manipulative observers, discover the romance and denounce the couple, leading to Teresa being confined in the convent of Santa Agripina. Finally, Jean, with the help of his friend Antonio and through false statements and influence, manages to rescue Teresa and flee with her by boat to South America.\nPàg\n<em>Valencia entre dos sueños</em> (1931), by Georges Pillement, is a lyrical, nostalgic and hallucinatory work, structured around the memories of the protagonist, Jorge, at two stages of his life (at 17 and 26) in Valencia. Jorge wavers between two female figures: Pepita, a naive, timid, idealised young Valencian woman he has known since adolescence, and Doña Luisa, the young and elegant widowed Marchioness of Dos Aguas. During an evening at the Palace of the Marquis of Dos Aguas, Jorge and Luisa explore the building's passageways and secret rooms. An accident involving a set of ancient automata and a mechanically uncontrolled horse causes Luisa's death and leaves Jorge in a two-day coma. During that lapse, Jorge undergoes a spectral experience, believing himself a ghost alongside Luisa's spirit. After waking, he ends up marrying Pepita and moving to a castle in Gandia, condemned to live divided between his wife's earthly presence and the constant, invisible shadow of Luisa.",
+      "de": "Pàg\n<em>¡Valencia! Amores de España</em> (1928) von Adolphe Falgairolle erzählt in der Ich-Perspektive die Erlebnisse von Jean, einem französischen Filmemacher, der seine Aufenthalte zwischen den Pyrenäengipfeln von Torrebuena und der Stadt Valencia mit der Familie von Don Cristóbal Águilas verbringt. Don Cristóbal hat fünf Töchter aus zwei Ehen: einerseits die Zwillinge Amparo und Dorita, geprägt von scheinbarer Trägheit und alltäglichem Nihilismus; andererseits Teresa, eine entschlossene, lebensfrohe junge Frau. Jean geht eine tiefe emotionale Bindung mit Teresa ein. Die prekäre wirtschaftliche Lage von Don Cristóbal drängt Teresa jedoch zu einer Zweckheirat mit einem reichen katalanischen Industriellen. Einige Zeit später nehmen Jean und Teresa ihre heimliche Leidenschaft in Paris und Valencia wieder auf. Die Halbschwestern Amparo und Dorita, die als manipulative Beobachterinnen agieren, entdecken die Liebschaft und verraten das Paar, woraufhin Teresa ins Kloster Santa Agripina eingeschlossen wird. Schließlich gelingt es Jean mit Hilfe seines Freundes Antonio und durch falsche Aussagen und Beziehungen, Teresa zu befreien und mit ihr auf einem Schiff nach Südamerika zu fliehen.\nPàg\n<em>Valencia entre dos sueños</em> (1931) von Georges Pillement ist ein lyrisches, nostalgisches und halluzinatorisches Werk, das sich um die Erinnerungen des Protagonisten Jorge an zwei Lebensphasen (mit 17 und 26 Jahren) in Valencia strukturiert. Jorge schwankt zwischen zwei weiblichen Figuren: Pepita, einer naiven, scheuen, idealisierten jungen Valencianerin, die er seit der Jugend kennt, und Doña Luisa, der jungen, eleganten verwitweten Marquise von Dos Aguas. Während eines Abends im Palast des Marquis von Dos Aguas erkunden Jorge und Luisa die Gänge und geheimen Gemächer des Gebäudes. Ein Unfall mit antiken Automaten und einem mechanisch unkontrollierbaren Pferd fordert Luisas Tod und versetzt Jorge in ein zweitägiges Koma. In dieser Zeit durchlebt Jorge eine gespenstische Erfahrung und glaubt, ein Geist neben Luisas Seele zu sein. Nach dem Erwachen heiratet er Pepita und zieht auf ein Schloss in Gandia, verdammt, geteilt zu leben zwischen der irdischen Gegenwart seiner Frau und dem ständigen, unsichtbaren Schatten von Luisa."
+    },
+    "stripe": "https://buy.stripe.com/3cIaEZ4zl4iZ4VyevX2Fa03",
+    "tag": {
+      "es": "Dos novelas sobre la Valencia de la Belle Époque"
+    },
+    "isbn": "978-84-09-94077-6"
   },
   {
-    col:'lit', band:'b-red3', author:'Oskar Panizza', bilingual:true, price:'8,00 €',
-    labelCa:"Literatura · 3", labelEs:"Literatura · 4",
-    titleCa:"La Immaculada Concepció dels Papes", titleEs:"La Inmaculada Concepción de los Papas",
-    free:{
-      ca:"Oskar Panizza: Crist, sota una llum psicopatològica",
-      es:"Oskar Panizza: Cristo, bajo una luz psicopatológica",
-      fr:"Oskar Panizza : Le Christ à la lumière psychopathologique",
-      en:"Oskar Panizza: Christ in a Psychopathological Light",
-      de:"Oskar Panizza: Christus im psychopathologischen Licht" },
-    meta:{
-      ca:"Col·lecció Literatura, 3 i 4 · Edició bilingüe valencià/català i castellà · EPUB / PDF",
-      es:"Colección Literatura, 3 y 4 · Edición bilingüe valencià/català y castellano · EPUB / PDF",
-      fr:"Collection Littérature, 3 et 4 · Édition bilingue valencien/catalan et espagnol · EPUB / PDF",
-      en:"Literature Collection, 3 & 4 · Bilingual Valencian/Catalan and Spanish edition · EPUB / PDF",
-      de:"Reihe Literatur, 3 und 4 · Zweisprachige Ausgabe Valencianisch/Katalanisch und Spanisch · EPUB / PDF" },
-    blurb:{
-      ca:"Aquesta és una obra fonamental d'Oskar Panizza, conegut per l'obra de teatre <em>El concili de l'amor</em>, que li valgué la persecució per impietat de l'Estat prussià. Ací, Panizza es presenta com el traductor i anotador d'una suposada obra del germà Martí, un monjo benedictí de Montserrat, que argumenta i dona proves teològiques sobre la Immaculada Concepció dels Papes. Es repassen les fonts historico-religioses, s'analitza el dogma de la Immaculada Concepció, explorant tant l'origen com l'evolució doctrinal entorn de la figura de la Verge Maria i la seua naturalesa exempta de pecat original. L'obra examina també la figura i omnipotència dels Papes, equiparant-ne l'autoritat i creació contínua amb poders divins dins de la jerarquia de l'Església Catòlica. A més, es detallen diverses etapes teològiques, debats escolàstics i moments clau de la història eclesiàstica per argumentar com el poder papal i la gràcia divina s'estenen tant sobre la terra com en l'espai i el passat. Finalment, els textos reflecteixen la controvèrsia i l'acceptació dogmàtica d'aquests misteris a través dels segles, culminant en les proclamacions oficials de Pius IX a Roma. L'obra, per tant, és una magistral obra irònica, que es caracteritza per la finor dels raonaments i els coneixements teològics de Panizza, que pretén defugir de la censura amb la forma d'una traducció d'una obra en altra llengua. Un monument del pensament laic i…",
-      es:"Esta es una obra fundamental de Oskar Panizza, conocido por la obra de teatro <em>El concilio del amor</em>, que le valió la persecución por impiedad del Estado prusiano. Aquí, Panizza se presenta como el traductor y anotador de una supuesta obra del hermano Martín, un monje benedictino de Montserrat, que argumenta y da pruebas teológicas sobre la Inmaculada Concepción de los Papas. Se repasan las fuentes historico-religiosas, se analiza el dogma de la Inmaculada Concepción, explorando tanto el origen como la evolución doctrinal en torno a la figura de la Virgen María y su naturaleza exenta de pecado original. La obra examina también la figura y omnipotencia de los Papas, equiparando su autoridad y creación continua con poderes divinos dentro de la jerarquía de la Iglesia Católica. Además, se detallan diversas etapas teológicas, debates escolásticos y momentos clave de la historia eclesiástica para argumentar cómo el poder papal y la gracia divina se extienden tanto sobre la tierra como en el espacio y el pasado. Finalmente, los textos reflejan la controversia y la aceptación dogmática de estos misterios a través de los siglos, culminando en las proclamaciones oficiales de Pío IX en Roma. La obra, por tanto, es una magistral obra irónica, que se caracteriza por la fineza de los razonamientos y los conocimientos teológicos de Panizza, que pretende eludir la censura con la forma de una traducción de una obra en otra lengua. Un monumento del pensamiento laico y…",
-      fr:"C'est une œuvre fondamentale d'Oskar Panizza, connu pour la pièce de théâtre <em>Le Concile de l'amour</em>, qui lui valut la persécution pour impiété de l'État prussien. Ici, Panizza se présente comme le traducteur et annotateur d'une supposée œuvre du frère Martin, un moine bénédictin de Montserrat, qui argumente et apporte des preuves théologiques sur la Conception immaculée des Papes. Les sources historico-religieuses sont passées en revue et le dogme de l'Immaculée Conception est analysé, en explorant à la fois l'origine et l'évolution doctrinale autour de la figure de la Vierge Marie et de sa nature exempte du péché originel. L'œuvre examine aussi la figure et l'omnipotence des Papes, assimilant leur autorité et leur création continue à des pouvoirs divins au sein de la hiérarchie de l'Église catholique. En outre, elle détaille diverses étapes théologiques, débats scolastiques et moments clés de l'histoire ecclésiastique pour montrer comment le pouvoir papal et la grâce divine s'étendent sur la terre comme dans l'espace et le passé. Enfin, les textes reflètent la controverse et l'acceptation dogmatique de ces mystères à travers les siècles, culminant dans les proclamations officielles de Pie IX à Rome. L'œuvre est donc une magistrale œuvre ironique, caractérisée par la finesse des raisonnements et les connaissances théologiques de Panizza, qui prétend échapper à la censure sous la forme d'une traduction d'une œuvre dans une autre langue. Un monument de la pensée laïque et…",
-      en:"This is a fundamental work by Oskar Panizza, known for the play <em>The Council of Love</em>, which earned him persecution for impiety by the Prussian state. Here Panizza presents himself as the translator and annotator of a supposed work by Brother Martin, a Benedictine monk of Montserrat, who argues and gives theological proofs of the Immaculate Conception of the Popes. The historico-religious sources are reviewed and the dogma of the Immaculate Conception is analysed, exploring both the origin and the doctrinal evolution around the figure of the Virgin Mary and her nature exempt from original sin. The work also examines the figure and omnipotence of the Popes, equating their authority and continuous creation with divine powers within the hierarchy of the Catholic Church. In addition, it details various theological stages, scholastic debates and key moments of ecclesiastical history to argue how papal power and divine grace extend over the earth as well as through space and the past. Finally, the texts reflect the controversy and dogmatic acceptance of these mysteries through the centuries, culminating in the official proclamations of Pius IX in Rome. The work is therefore a masterly ironic piece, characterised by the finesse of its reasoning and Panizza's theological knowledge, which seeks to evade censorship under the guise of a translation of a work in another language. A monument of secular and… thought.",
-      de:"Dies ist ein grundlegendes Werk Oskar Panizzas, bekannt durch das Theaterstück <em>Das Liebeskonzil</em>, das ihm die Verfolgung durch den preußischen Staat wegen Gotteslästerung einbrachte. Hier gibt sich Panizza als Übersetzer und Kommentator einer vermeintlichen Schrift des Bruders Martin, eines Benediktinermönchs von Montserrat, der theologische Beweise für die unbefleckte Empfängnis der Päpste vorbringt. Die historisch-religiösen Quellen werden durchgegangen und das Dogma der unbefleckten Empfängnis analysiert, wobei sowohl der Ursprung als auch die dogmatische Entwicklung um die Figur der Jungfrau Maria und ihre Natur frei von Erbsünde erkundet werden. Das Werk untersucht auch Figur und Allmacht der Päpste und setzt ihre Autorität und ständige Schöpfung göttlichen Mächten innerhalb der Hierarchie der katholischen Kirche gleich. Außerdem werden verschiedene theologische Etappen, scholastische Debatten und Schlüsselmomente der Kirchengeschichte detailliert, um darzulegen, wie sich die päpstliche Macht und die göttliche Gnade über die Erde sowie in Raum und Vergangenheit erstrecken. Schließlich spiegeln die Texte die Kontroverse und dogmatische Annahme dieser Mysterien durch die Jahrhunderte wider, gekrönt von den offiziellen Proklamationen Pius' IX. in Rom. Das Werk ist daher ein meisterhaftes ironisches Werk, gekennzeichnet durch die Feinheit der Argumentation und Panizzas theologische Kenntnisse, das unter dem Deckmantel einer Übersetzung aus einer anderen Sprache der Zensur zu entgehen sucht. Ein Monument des säkularen und… Denkens." }
+    "col": "lit",
+    "band": "b-red3",
+    "author": "Oskar Panizza",
+    "bilingual": true,
+    "price": "8,00 €",
+    "labelCa": "Literatura · 3",
+    "labelEs": "Literatura · 4",
+    "titleCa": "La Immaculada Concepció dels Papes",
+    "titleEs": "La Inmaculada Concepción de los Papas",
+    "free": {
+      "ca": "Oskar Panizza: Crist, sota una llum psicopatològica",
+      "es": "Oskar Panizza: Cristo, bajo una luz psicopatológica",
+      "fr": "Oskar Panizza : Le Christ à la lumière psychopathologique",
+      "en": "Oskar Panizza: Christ in a Psychopathological Light",
+      "de": "Oskar Panizza: Christus im psychopathologischen Licht"
+    },
+    "meta": {
+      "ca": "Col·lecció Literatura, 3 i 4 · Edició bilingüe valencià/català i castellà · EPUB / PDF",
+      "es": "Colección Literatura, 3 y 4 · Edición bilingüe valencià/català y castellano · EPUB / PDF",
+      "fr": "Collection Littérature, 3 et 4 · Édition bilingue valencien/catalan et espagnol · EPUB / PDF",
+      "en": "Literature Collection, 3 & 4 · Bilingual Valencian/Catalan and Spanish edition · EPUB / PDF",
+      "de": "Reihe Literatur, 3 und 4 · Zweisprachige Ausgabe Valencianisch/Katalanisch und Spanisch · EPUB / PDF"
+    },
+    "blurb": {
+      "ca": "Aquesta és una obra fonamental d'Oskar Panizza, conegut per l'obra de teatre <em>El concili de l'amor</em>, que li valgué la persecució per impietat de l'Estat prussià. Ací, Panizza es presenta com el traductor i anotador d'una suposada obra del germà Martí, un monjo benedictí de Montserrat, que argumenta i dona proves teològiques sobre la Immaculada Concepció dels Papes. Es repassen les fonts historico-religioses, s'analitza el dogma de la Immaculada Concepció, explorant tant l'origen com l'evolució doctrinal entorn de la figura de la Verge Maria i la seua naturalesa exempta de pecat original. L'obra examina també la figura i omnipotència dels Papes, equiparant-ne l'autoritat i creació contínua amb poders divins dins de la jerarquia de l'Església Catòlica. A més, es detallen diverses etapes teològiques, debats escolàstics i moments clau de la història eclesiàstica per argumentar com el poder papal i la gràcia divina s'estenen tant sobre la terra com en l'espai i el passat. Finalment, els textos reflecteixen la controvèrsia i l'acceptació dogmàtica d'aquests misteris a través dels segles, culminant en les proclamacions oficials de Pius IX a Roma. L'obra, per tant, és una magistral obra irònica, que es caracteritza per la finor dels raonaments i els coneixements teològics de Panizza, que pretén defugir de la censura amb la forma d'una traducció d'una obra en altra llengua. Un monument del pensament laic i antieclesiàstic.",
+      "es": "Esta es una obra fundamental de Oskar Panizza, conocido por la obra de teatro <em>El concilio del amor</em>, que le valió la persecución por impiedad del Estado prusiano. Aquí, Panizza se presenta como el traductor y anotador de una supuesta obra del hermano Martín, un monje benedictino de Montserrat, que argumenta y da pruebas teológicas sobre la Inmaculada Concepción de los Papas. Se repasan las fuentes historico-religiosas, se analiza el dogma de la Inmaculada Concepción, explorando tanto el origen como la evolución doctrinal en torno a la figura de la Virgen María y su naturaleza exenta de pecado original. La obra examina también la figura y omnipotencia de los Papas, equiparando su autoridad y creación continua con poderes divinos dentro de la jerarquía de la Iglesia Católica. Además, se detallan diversas etapas teológicas, debates escolásticos y momentos clave de la historia eclesiástica para argumentar cómo el poder papal y la gracia divina se extienden tanto sobre la tierra como en el espacio y el pasado. Finalmente, los textos reflejan la controversia y la aceptación dogmática de estos misterios a través de los siglos, culminando en las proclamaciones oficiales de Pío IX en Roma. La obra, por tanto, es una magistral obra irónica, que se caracteriza por la fineza de los razonamientos y los conocimientos teológicos de Panizza, que pretende eludir la censura con la forma de una traducción de una obra en otra lengua. Un monumento del pensamiento laico y antieclesiástico.",
+      "fr": "C'est une œuvre fondamentale d'Oskar Panizza, connu pour la pièce de théâtre <em>Le Concile de l'amour</em>, qui lui valut la persécution pour impiété de l'État prussien. Ici, Panizza se présente comme le traducteur et annotateur d'une supposée œuvre du frère Martin, un moine bénédictin de Montserrat, qui argumente et apporte des preuves théologiques sur la Conception immaculée des Papes. Les sources historico-religieuses sont passées en revue et le dogme de l'Immaculée Conception est analysé, en explorant à la fois l'origine et l'évolution doctrinale autour de la figure de la Vierge Marie et de sa nature exempte du péché originel. L'œuvre examine aussi la figure et l'omnipotence des Papes, assimilant leur autorité et leur création continue à des pouvoirs divins au sein de la hiérarchie de l'Église catholique. En outre, elle détaille diverses étapes théologiques, débats scolastiques et moments clés de l'histoire ecclésiastique pour montrer comment le pouvoir papal et la grâce divine s'étendent sur la terre comme dans l'espace et le passé. Enfin, les textes reflètent la controverse et l'acceptation dogmatique de ces mystères à travers les siècles, culminant dans les proclamations officielles de Pie IX à Rome. L'œuvre est donc une magistrale œuvre ironique, caractérisée par la finesse des raisonnements et les connaissances théologiques de Panizza, qui prétend échapper à la censure sous la forme d'une traduction d'une œuvre dans une autre langue. Un monument de la pensée laïque et anticléricale.",
+      "en": "This is a fundamental work by Oskar Panizza, known for the play <em>The Council of Love</em>, which earned him persecution for impiety by the Prussian state. Here Panizza presents himself as the translator and annotator of a supposed work by Brother Martin, a Benedictine monk of Montserrat, who argues and gives theological proofs of the Immaculate Conception of the Popes. The historico-religious sources are reviewed and the dogma of the Immaculate Conception is analysed, exploring both the origin and the doctrinal evolution around the figure of the Virgin Mary and her nature exempt from original sin. The work also examines the figure and omnipotence of the Popes, equating their authority and continuous creation with divine powers within the hierarchy of the Catholic Church. In addition, it details various theological stages, scholastic debates and key moments of ecclesiastical history to argue how papal power and divine grace extend over the earth as well as through space and the past. Finally, the texts reflect the controversy and dogmatic acceptance of these mysteries through the centuries, culminating in the official proclamations of Pius IX in Rome. The work is therefore a masterly ironic piece, characterised by the finesse of its reasoning and Panizza's theological knowledge, which seeks to evade censorship under the guise of a translation of a work in another language. A monument of secular and anti-ecclesiastical thought.",
+      "de": "Dies ist ein grundlegendes Werk Oskar Panizzas, bekannt durch das Theaterstück <em>Das Liebeskonzil</em>, das ihm die Verfolgung durch den preußischen Staat wegen Gotteslästerung einbrachte. Hier gibt sich Panizza als Übersetzer und Kommentator einer vermeintlichen Schrift des Bruders Martin, eines Benediktinermönchs von Montserrat, der theologische Beweise für die unbefleckte Empfängnis der Päpste vorbringt. Die historisch-religiösen Quellen werden durchgegangen und das Dogma der unbefleckten Empfängnis analysiert, wobei sowohl der Ursprung als auch die dogmatische Entwicklung um die Figur der Jungfrau Maria und ihre Natur frei von Erbsünde erkundet werden. Das Werk untersucht auch Figur und Allmacht der Päpste und setzt ihre Autorität und ständige Schöpfung göttlichen Mächten innerhalb der Hierarchie der katholischen Kirche gleich. Außerdem werden verschiedene theologische Etappen, scholastische Debatten und Schlüsselmomente der Kirchengeschichte detailliert, um darzulegen, wie sich die päpstliche Macht und die göttliche Gnade über die Erde sowie in Raum und Vergangenheit erstrecken. Schließlich spiegeln die Texte die Kontroverse und dogmatische Annahme dieser Mysterien durch die Jahrhunderte wider, gekrönt von den offiziellen Proklamationen Pius' IX. in Rom. Das Werk ist daher ein meisterhaftes ironisches Werk, gekennzeichnet durch die Feinheit der Argumentation und Panizzas theologische Kenntnisse, das unter dem Deckmantel einer Übersetzung aus einer anderen Sprache der Zensur zu entgehen sucht. Ein Monument des säkularen und antiklerikalen Denkens."
+    },
+    "stripe": {
+      "ca": "https://buy.stripe.com/dRmaEZ3vh4iZco01Jb2Fa02",
+      "es": "https://buy.stripe.com/9B6fZj4zl8zf0FibjL2Fa01"
+    },
+    "tag": {
+      "ca": "El llibre més intel·ligentment anticlerical d'un autor maleït"
+    },
+    "isbn": "978-84-09-94076-9"
   },
   {
-    col:'lit', band:'b-red4', author:'Francesc J. Hernàndez', price:'6,00 €',
-    labelCa:"Literatura · 5", titleCa:"Amb els cinc sentits",
-    meta:{
-      ca:"Col·lecció Literatura, 5 · Valencià/Català · EPUB / PDF",
-      es:"Colección Literatura, 5 · Valencià/Català · EPUB / PDF",
-      fr:"Collection Littérature, 5 · Valencien/Catalan · EPUB / PDF",
-      en:"Literature Collection, 5 · Valencian/Catalan · EPUB / PDF",
-      de:"Reihe Literatur, 5 · Valencianisch/Katalanisch · EPUB / PDF" },
-    blurb:{
-      ca:"A través de cinc parts inspirades en els cinc sentits, la novel·la narra les peripecies d'un matrimoni de jubilats, format per Isabel Ivars i Bernardo Beltrán, que es veu embolicat en investigacions rocambolesques. Tot comença quan descobreixen un cadàver momificat d'un coronel franquista amagat sota l'ascensor de la finca familiar, un cas que els duu a destapar secrets del passat, connexions amb la reialesa en l'exili i vells contes infantils convertits en realitat. A partir d'aleshores, la seua aparentment tranquil·la jubilació es veu sacsejada per episodis insòlits que inclouen des d'un tiroteig en una cabana rural a Xelva, provocat per rancors de la Guerra Civil, fins a l'espionatge d'una trama d'estafa financera internacional amb agulles mèdiques intel·ligents per una finestra indiscreta del pis de damunt. El periple vital de la parella continua amb un viatge transatlàntic a Mèxic per resoldre l'hereència d'un antic lluitador de catch. Seran segrestats per narcotraficants i s'enfrontaran a la trama valenciana de l'assassinat de Trotski. En l'última part, es veuran embolicats en un assassinat a l'editorial Espigol, un assumpte de falsificacions i enveges en el qual l'assassí era el…",
-      es:"A través de cinco partes inspiradas en los cinco sentidos, la novela narra las peripecias de un matrimonio de jubilados, formado por Isabel Ivars y Bernardo Beltrán, que se ve envuelto en investigaciones rocambolescas. Todo comienza cuando descubren un cadáver momificado de un coronel franquista escondido bajo el ascensor de la finca familiar, un caso que les lleva a destapar secretos del pasado, conexiones con la realeza en el exilio y viejos cuentos infantiles convertidos en realidad. A partir de entonces, su aparentemente tranquila jubilación se ve sacudida por episodios insólitos que incluyen desde un tiroteo en una cabaña rural en Chelva, provocado por rencores de la Guerra Civil, hasta el espionaje de una trama de estafa financiera internacional con agujas médicas inteligentes a través de una ventana indiscreta del piso de arriba. El periplo vital de la pareja continúa con un viaje transatlántico a México para resolver la herencia de un antiguo luchador de catch. Serán secuestrados por narcotraficantes y se enfrentarán a la trama valenciana del asesinato de Trotski. En la última parte, se verán envueltos en un asesinato en la editorial Espigol, un asunto de falsificaciones y envidias en el que el asesino era el…",
-      fr:"À travers cinq parties inspirées des cinq sens, le roman narre les péripéties d'un couple de retraités, formé par Isabel Ivars et Bernardo Beltrán, qui se retrouve empêtré dans des enquêtes rocambolesques. Tout commence lorsqu'ils découvrent le cadavre momifié d'un colonel franquiste caché sous l'ascenseur de l'immeuble familial, une affaire qui les conduit à déterrer des secrets du passé, des liens avec la royauté en exil et de vieux contes d'enfance devenus réalité. Dès lors, leur retraite apparemment paisible est ébranlée par des épisodes insolites, allant d'une fusillade dans une cabane rurale à Xelva, provoquée par des rancunes de la guerre civile, à l'espionnage d'une escroquerie financière internationale avec des aiguilles médicales intelligentes à travers une fenêtre indiscrète de l'appartement du dessus. Le périple vital du couple se poursuit par un voyage transatlantique au Mexique pour régler l'héritage d'un ancien catcheur. Ils seront kidnappés par des narcotrafiquants et affronteront la filière valencienne de l'assassinat de Trotski. Dans la dernière partie, ils se retrouveront mêlés à un meurtre dans la maison d'édition Espigol, une affaire de falsifications et de jalousies dans laquelle l'assassin était le…",
-      en:"Through five parts inspired by the five senses, the novel recounts the adventures of a retired couple, Isabel Ivars and Bernardo Beltrán, who become entangled in outlandish investigations. It all begins when they discover the mummified corpse of a Francoist colonel hidden beneath the lift of the family building, a case that leads them to uncover secrets from the past, connections with royalty in exile and old childhood tales turned real. From then on, their apparently peaceful retirement is shaken by unusual episodes ranging from a shootout in a rural cabin in Xelva, caused by Civil War grudges, to the espionage of an international financial fraud scheme involving smart medical needles through an indiscreet window of the flat above. The couple's life journey continues with a transatlantic voyage to Mexico to settle the inheritance of a former wrestler. They will be kidnapped by drug traffickers and confront the Valencian network behind the assassination of Trotsky. In the last part, they become embroiled in a murder at the Espigol publishing house, a matter of forgeries and jealousies in which the murderer was the…",
-      de:"In fünf Teilen, die von den fünf Sinnen inspiriert sind, erzählt der Roman die Abenteuer eines pensionierten Ehepaars, Isabel Ivars und Bernardo Beltrán, das in abenteuerliche Ermittlungen verwickelt wird. Alles beginnt, als sie unter dem Aufzug des Familienhauses die mumifizierte Leiche eines francoistischen Obersts entdecken – ein Fall, der sie dazu bringt, Geheimnisse der Vergangenheit aufzudecken, Verbindungen zur königlichen Familie im Exil und alte Kindermärchen, die wahr werden. Von da an wird ihr scheinbar ruhiger Ruhestand durch wundersame Episoden erschüttert: von einer Schießerei in einer ländlichen Hütte in Xelva, ausgelöst durch Groll aus dem Bürgerkrieg, bis zur Spionage eines internationalen Finanzbetrugs mit intelligenten medizinischen Nadeln durch ein indiskretes Fenster der oberen Wohnung. Die Lebensreise des Paares geht mit einer transatlantischen Reise nach Mexiko weiter, um das Erbe eines ehemaligen Wrestlers zu klären. Sie werden von Drogenhändlern entführt und konfrontieren das valencianische Netzwerk rund um das Attentat auf Trotzki. Im letzten Teil verstricken sie sich in einen Mord im Verlag Espigol, eine Sache von Fälschungen und Eifersüchten, bei der der Mörder der… war." }
+    "col": "lit",
+    "band": "b-red4",
+    "author": "Francesc J. Hernàndez",
+    "price": "6,00 €",
+    "labelCa": "Literatura · 5",
+    "titleCa": "Amb els cinc sentits",
+    "meta": {
+      "ca": "Col·lecció Literatura, 5 · Valencià/Català · EPUB / PDF",
+      "es": "Colección Literatura, 5 · Valencià/Català · EPUB / PDF",
+      "fr": "Collection Littérature, 5 · Valencien/Catalan · EPUB / PDF",
+      "en": "Literature Collection, 5 · Valencian/Catalan · EPUB / PDF",
+      "de": "Reihe Literatur, 5 · Valencianisch/Katalanisch · EPUB / PDF"
+    },
+    "blurb": {
+      "ca": "A través de cinc parts inspirades en els cinc sentits, la novel·la narra les peripecies d'un matrimoni de jubilats, format per Isabel Ivars i Bernardo Beltrán, que es veu embolicat en investigacions rocambolesques. Tot comença quan descobreixen un cadàver momificat d'un coronel franquista amagat sota l'ascensor de la finca familiar, un cas que els duu a destapar secrets del passat, connexions amb la reialesa en l'exili i vells contes infantils convertits en realitat. A partir d'aleshores, la seua aparentment tranquil·la jubilació es veu sacsejada per episodis insòlits que inclouen des d'un tiroteig en una cabana rural a Xelva, provocat per rancors de la Guerra Civil, fins a l'espionatge d'una trama d'estafa financera internacional amb agulles mèdiques intel·ligents per una finestra indiscreta del pis de damunt. El periple vital de la parella continua amb un viatge transatlàntic a Mèxic per resoldre l'hereència d'un antic lluitador de catch. Seran segrestats per narcotraficants i s'enfrontaran a la trama valenciana de l'assassinat de Trotski. En l'última part, es veuran embolicats en un assassinat a l'editorial Espigol, un assumpte de falsificacions i enveges en el qual l'assassí era el lector.",
+      "es": "A través de cinco partes inspiradas en los cinco sentidos, la novela narra las peripecias de un matrimonio de jubilados, formado por Isabel Ivars y Bernardo Beltrán, que se ve envuelto en investigaciones rocambolescas. Todo comienza cuando descubren un cadáver momificado de un coronel franquista escondido bajo el ascensor de la finca familiar, un caso que les lleva a destapar secretos del pasado, conexiones con la realeza en el exilio y viejos cuentos infantiles convertidos en realidad. A partir de entonces, su aparentemente tranquila jubilación se ve sacudida por episodios insólitos que incluyen desde un tiroteo en una cabaña rural en Chelva, provocado por rencores de la Guerra Civil, hasta el espionaje de una trama de estafa financiera internacional con agujas médicas inteligentes a través de una ventana indiscreta del piso de arriba. El periplo vital de la pareja continúa con un viaje transatlántico a México para resolver la herencia de un antiguo luchador de catch. Serán secuestrados por narcotraficantes y se enfrentarán a la trama valenciana del asesinato de Trotski. En la última parte, se verán envueltos en un asesinato en la editorial Espigol, un asunto de falsificaciones y envidias en el que el asesino era el lector.",
+      "fr": "À travers cinq parties inspirées des cinq sens, le roman narre les péripéties d'un couple de retraités, formé par Isabel Ivars et Bernardo Beltrán, qui se retrouve empêtré dans des enquêtes rocambolesques. Tout commence lorsqu'ils découvrent le cadavre momifié d'un colonel franquiste caché sous l'ascenseur de l'immeuble familial, une affaire qui les conduit à déterrer des secrets du passé, des liens avec la royauté en exil et de vieux contes d'enfance devenus réalité. Dès lors, leur retraite apparemment paisible est ébranlée par des épisodes insolites, allant d'une fusillade dans une cabane rurale à Xelva, provoquée par des rancunes de la guerre civile, à l'espionnage d'une escroquerie financière internationale avec des aiguilles médicales intelligentes à travers une fenêtre indiscrète de l'appartement du dessus. Le périple vital du couple se poursuit par un voyage transatlantique au Mexique pour régler l'héritage d'un ancien catcheur. Ils seront kidnappés par des narcotrafiquants et affronteront la filière valencienne de l'assassinat de Trotski. Dans la dernière partie, ils se retrouveront mêlés à un meurtre dans la maison d'édition Espigol, une affaire de falsifications et de jalousies dans laquelle l'assassin était le lecteur.",
+      "en": "Through five parts inspired by the five senses, the novel recounts the adventures of a retired couple, Isabel Ivars and Bernardo Beltrán, who become entangled in outlandish investigations. It all begins when they discover the mummified corpse of a Francoist colonel hidden beneath the lift of the family building, a case that leads them to uncover secrets from the past, connections with royalty in exile and old childhood tales turned real. From then on, their apparently peaceful retirement is shaken by unusual episodes ranging from a shootout in a rural cabin in Xelva, caused by Civil War grudges, to the espionage of an international financial fraud scheme involving smart medical needles through an indiscreet window of the flat above. The couple's life journey continues with a transatlantic voyage to Mexico to settle the inheritance of a former wrestler. They will be kidnapped by drug traffickers and confront the Valencian network behind the assassination of Trotsky. In the last part, they become embroiled in a murder at the Espigol publishing house, a matter of forgeries and jealousies in which the murderer was the reader.",
+      "de": "In fünf Teilen, die von den fünf Sinnen inspiriert sind, erzählt der Roman die Abenteuer eines pensionierten Ehepaars, Isabel Ivars und Bernardo Beltrán, das in abenteuerliche Ermittlungen verwickelt wird. Alles beginnt, als sie unter dem Aufzug des Familienhauses die mumifizierte Leiche eines francoistischen Obersts entdecken – ein Fall, der sie dazu bringt, Geheimnisse der Vergangenheit aufzudecken, Verbindungen zur königlichen Familie im Exil und alte Kindermärchen, die wahr werden. Von da an wird ihr scheinbar ruhiger Ruhestand durch wundersame Episoden erschüttert: von einer Schießerei in einer ländlichen Hütte in Xelva, ausgelöst durch Groll aus dem Bürgerkrieg, bis zur Spionage eines internationalen Finanzbetrugs mit intelligenten medizinischen Nadeln durch ein indiskretes Fenster der oberen Wohnung. Die Lebensreise des Paares geht mit einer transatlantischen Reise nach Mexiko weiter, um das Erbe eines ehemaligen Wrestlers zu klären. Sie werden von Drogenhändlern entführt und konfrontieren das valencianische Netzwerk rund um das Attentat auf Trotzki. Im letzten Teil verstricken sie sich in einen Mord im Verlag Espigol, eine Sache von Fälschungen und Eifersüchten, bei der der Mörder der Leser war."
+    },
+    "stripe": "https://buy.stripe.com/fZudRbd5R02J5ZCafH2Fa00",
+    "tag": {
+      "ca": "La vida de les persones jubilades pot ser un seguit d'aventures."
+    },
+    "isbn": "978-84-09-94075-2"
   },
   {
-    col:'val', band:'b-green1', author:'Joan Lluís Vives · Francesc J. Hernàndez', bilingual:true, price:'8,00 €',
-    labelCa:"València · 1", labelEs:"València · 2",
-    titleCa:"Passeig per València de la mà de Joan Lluís Vives", titleEs:"Paseo por Valencia de la mano de Juan Luis Vives",
-    free:{
-      ca:"Francesc J. Hernàndez: El projecte filosòfic de Joan Lluís Vives",
-      es:"Francesc J. Hernàndez: El proyecto filosófico de Juan Luis Vives",
-      fr:"Francesc J. Hernàndez : Le projet philosophique de Joan Lluís Vives",
-      en:"Francesc J. Hernàndez: The Philosophical Project of Joan Lluís Vives",
-      de:"Francesc J. Hernàndez: Das philosophische Projekt von Joan Lluís Vives" },
-    meta:{
-      ca:"Col·lecció València, 1 i 2 · Edició bilingüe · PDF · Fotografies: Helena Dobon",
-      es:"Colección València, 1 y 2 · Edición bilingüe · PDF · Fotografías: Helena Dobon",
-      fr:"Collection València, 1 et 2 · Édition bilingue · PDF · Photographies : Helena Dobon",
-      en:"València Collection, 1 & 2 · Bilingual edition · PDF · Photographs: Helena Dobon",
-      de:"Reihe València, 1 und 2 · Zweisprachige Ausgabe · PDF · Fotografien: Helena Dobon" },
-    blurb:{
-      ca:"El llibre és una invitació a llegir un escrit de Joan Lluís Vives, el diàleg que s'anomena <em>Les lleis del joc</em>, publicat en el seu <em>Exercici de Llengua Llatina</em> (1539). El text descriu un passeig per la ciutat de València, que comença a la plaça Nàpols i Sicília i finalitza en la plaça de la Mare de Déu. Pot llegir-lo i, al mateix temps, recórrer els carrers i les places que s'hi esmenten. El text del diàleg de Vives es troba en els capítols 2n, 6é, 10é, 12é, 14é i 19é del llibre; la resta de capítols són explicacions complementàries per gaudir de la prosa de l'humanista i del passeig. A la fi, hi ha un annex amb un elogi de Vives de la seua ciutat i un altre amb informació bibliogràfica. Pel que fa al text de Vives, s'ha actualitzat la traducció dels <em>Diàlegs</em> realitzada per Josep Pin i Soler i publicada a Barcelona el…",
-      es:"El libro es una invitación a leer un escrito de Joan Lluís Vives, el diálogo que se denomina <em>Les lleis del joc</em>, publicado en su <em>Exercicio de Lengua Latina</em> (1539). El texto describe un paseo por la ciudad de Valencia, que comienza en la plaza Nápoles y Sicilia y finaliza en la plaza de la Mare de Déu. Puede leerlo y, al mismo tiempo, recorrer las calles y las plazas que en él se mencionan. El texto del diálogo de Vives se encuentra en los capítulos 2.º, 6.º, 10.º, 12.º, 14.º y 19.º del libro; el resto de capítulos son explicaciones complementarias para disfrutar de la prosa del humanista y del paseo. Al final, hay un anexo con un elogio de Vives de su ciudad y otro con información bibliográfica. En cuanto al texto de Vives, se ha actualizado la traducción de los <em>Diálogos</em> realizada por Josep Pin i Soler y publicada en Barcelona el…",
-      fr:"Le livre est une invitation à lire un écrit de Joan Lluís Vives, le dialogue intitulé <em>Les lleis del joc</em>, publié dans son <em>Exercitatio linguae latinae</em> (1539). Le texte décrit une promenade dans la ville de Valence, qui commence à la place Naples-et-Sicile et s'achève à la place de la Mare de Déu. On peut le lire tout en parcourant les rues et les places qui y sont mentionnées. Le texte du dialogue de Vives se trouve dans les chapitres 2, 6, 10, 12, 14 et 19 du livre ; les autres chapitres sont des explications complémentaires pour jouir de la prose de l'humaniste et de la promenade. À la fin, une annexe contient un éloge de Valence par Vives et une autre des informations bibliographiques. Quant au texte de Vives, la traduction des <em>Dialogues</em> réalisée par Josep Pin i Soler et publiée à Barcelone a été mise à jour.",
-      en:"The book is an invitation to read a text by Joan Lluís Vives, the dialogue known as <em>Les lleis del joc</em>, published in his <em>Exercitatio linguae latinae</em> (1539). The text describes a walk through the city of Valencia, which begins at Plaça de Nàpols i Sicília and ends at Plaça de la Mare de Déu. You can read it while walking the streets and squares it mentions. The text of Vives's dialogue is found in chapters 2, 6, 10, 12, 14 and 19 of the book; the remaining chapters are complementary explanations to enjoy the humanist's prose and the walk. At the end there is an appendix with Vives's praise of his city and another with bibliographic information. As for Vives's text, the translation of the <em>Dialogues</em> made by Josep Pin i Soler and published in Barcelona has been updated.",
-      de:"Das Buch ist eine Einladung, einen Text von Joan Lluís Vives zu lesen: den Dialog <em>Les lleis del joc</em>, veröffentlicht in seinem <em>Exercitatio linguae latinae</em> (1539). Der Text beschreibt einen Spaziergang durch die Stadt Valencia, der am Plaça de Nàpols i Sicília beginnt und an der Plaça de la Mare de Déu endet. Man kann ihn lesen und dabei gleichzeitig die Straßen und Plätze durchqueren, die darin erwähnt werden. Der Text von Vives' Dialog befindet sich in den Kapiteln 2, 6, 10, 12, 14 und 19 des Buchs; die übrigen Kapitel enthalten ergänzende Erklärungen, um die Prosa des Humanisten und den Spaziergang zu genießen. Am Ende befindet sich ein Anhang mit Vives' Lobpreisung seiner Stadt und ein weiterer mit bibliografischen Angaben. Der Text von Vives wurde an die Übersetzung der <em>Dialoge</em> von Josep Pin i Soler angepasst, die in Barcelona veröffentlicht wurde." }
+    "col": "val",
+    "band": "b-green1",
+    "author": "Joan Lluís Vives · Francesc J. Hernàndez",
+    "bilingual": true,
+    "price": "8,00 €",
+    "labelCa": "València · 1",
+    "labelEs": "València · 2",
+    "titleCa": "Passeig per València de la mà de Joan Lluís Vives",
+    "titleEs": "Paseo por Valencia de la mano de Juan Luis Vives",
+    "free": {
+      "ca": "Francesc J. Hernàndez: El projecte filosòfic de Joan Lluís Vives",
+      "es": "Francesc J. Hernàndez: El proyecto filosófico de Juan Luis Vives",
+      "fr": "Francesc J. Hernàndez : Le projet philosophique de Joan Lluís Vives",
+      "en": "Francesc J. Hernàndez: The Philosophical Project of Joan Lluís Vives",
+      "de": "Francesc J. Hernàndez: Das philosophische Projekt von Joan Lluís Vives"
+    },
+    "meta": {
+      "ca": "Col·lecció València, 1 i 2 · Edició bilingüe · PDF · Fotografies: Helena Dobon",
+      "es": "Colección València, 1 y 2 · Edición bilingüe · PDF · Fotografías: Helena Dobon",
+      "fr": "Collection València, 1 et 2 · Édition bilingue · PDF · Photographies : Helena Dobon",
+      "en": "València Collection, 1 & 2 · Bilingual edition · PDF · Photographs: Helena Dobon",
+      "de": "Reihe València, 1 und 2 · Zweisprachige Ausgabe · PDF · Fotografien: Helena Dobon"
+    },
+    "blurb": {
+      "ca": "El llibre és una invitació a llegir un escrit de Joan Lluís Vives, el diàleg que s'anomena <em>Les lleis del joc</em>, publicat en el seu <em>Exercici de Llengua Llatina</em> (1539). El text descriu un passeig per la ciutat de València, que comença a la plaça Nàpols i Sicília i finalitza en la plaça de la Mare de Déu. Pot llegir-lo i, al mateix temps, recórrer els carrers i les places que s'hi esmenten. El text del diàleg de Vives es troba en els capítols 2n, 6é, 10é, 12é, 14é i 19é del llibre; la resta de capítols són explicacions complementàries per gaudir de la prosa de l'humanista i del passeig. A la fi, hi ha un annex amb un elogi de Vives de la seua ciutat i un altre amb informació bibliogràfica. Pel que fa al text de Vives, s'ha actualitzat la traducció dels <em>Diàlegs</em> realitzada per Josep Pin i Soler i publicada a Barcelona el 1915.",
+      "es": "El libro es una invitación a leer un escrito de Joan Lluís Vives, el diálogo que se denomina <em>Les lleis del joc</em>, publicado en su <em>Exercicio de Lengua Latina</em> (1539). El texto describe un paseo por la ciudad de Valencia, que comienza en la plaza Nápoles y Sicilia y finaliza en la plaza de la Mare de Déu. Puede leerlo y, al mismo tiempo, recorrer las calles y las plazas que en él se mencionan. El texto del diálogo de Vives se encuentra en los capítulos 2.º, 6.º, 10.º, 12.º, 14.º y 19.º del libro; el resto de capítulos son explicaciones complementarias para disfrutar de la prosa del humanista y del paseo. Al final, hay un anexo con un elogio de Vives de su ciudad y otro con información bibliográfica. En cuanto al texto de Vives, se ha actualizado la traducción de los <em>Diálogos</em> realizada por Josep Pin i Soler y publicada en Barcelona en 1915.",
+      "fr": "Le livre est une invitation à lire un écrit de Joan Lluís Vives, le dialogue intitulé <em>Les lleis del joc</em>, publié dans son <em>Exercitatio linguae latinae</em> (1539). Le texte décrit une promenade dans la ville de Valence, qui commence à la place Naples-et-Sicile et s'achève à la place de la Mare de Déu. On peut le lire tout en parcourant les rues et les places qui y sont mentionnées. Le texte du dialogue de Vives se trouve dans les chapitres 2, 6, 10, 12, 14 et 19 du livre ; les autres chapitres sont des explications complémentaires pour jouir de la prose de l'humaniste et de la promenade. À la fin, une annexe contient un éloge de Valence par Vives et une autre des informations bibliographiques. Quant au texte de Vives, la traduction des <em>Dialogues</em> réalisée par Josep Pin i Soler et publiée à Barcelone a été mise à jour.",
+      "en": "The book is an invitation to read a text by Joan Lluís Vives, the dialogue known as <em>Les lleis del joc</em>, published in his <em>Exercitatio linguae latinae</em> (1539). The text describes a walk through the city of Valencia, which begins at Plaça de Nàpols i Sicília and ends at Plaça de la Mare de Déu. You can read it while walking the streets and squares it mentions. The text of Vives's dialogue is found in chapters 2, 6, 10, 12, 14 and 19 of the book; the remaining chapters are complementary explanations to enjoy the humanist's prose and the walk. At the end there is an appendix with Vives's praise of his city and another with bibliographic information. As for Vives's text, the translation of the <em>Dialogues</em> made by Josep Pin i Soler and published in Barcelona has been updated.",
+      "de": "Das Buch ist eine Einladung, einen Text von Joan Lluís Vives zu lesen: den Dialog <em>Les lleis del joc</em>, veröffentlicht in seinem <em>Exercitatio linguae latinae</em> (1539). Der Text beschreibt einen Spaziergang durch die Stadt Valencia, der am Plaça de Nàpols i Sicília beginnt und an der Plaça de la Mare de Déu endet. Man kann ihn lesen und dabei gleichzeitig die Straßen und Plätze durchqueren, die darin erwähnt werden. Der Text von Vives' Dialog befindet sich in den Kapiteln 2, 6, 10, 12, 14 und 19 des Buchs; die übrigen Kapitel enthalten ergänzende Erklärungen, um die Prosa des Humanisten und den Spaziergang zu genießen. Am Ende befindet sich ein Anhang mit Vives' Lobpreisung seiner Stadt und ein weiterer mit bibliografischen Angaben. Der Text von Vives wurde an die Übersetzung der <em>Dialoge</em> von Josep Pin i Soler angepasst, die in Barcelona veröffentlicht wurde."
+    },
+    "tag": {
+      "ca": "La primera ruta per València la va publicar Lluís Vives en 1539"
+    }
   },
   {
-    col:'val', band:'b-green2', author:'Xavier Oms i Francesc J. Hernàndez', price:'8,00 €',
-    labelCa:"València · 3", titleCa:"Ubi sunt?",
-    meta:{
-      ca:"Col·lecció València, 3 · Valencià/Català · Cartografia: Xavier Oms",
-      es:"Colección València, 3 · Valencià/Català · Cartografía: Xavier Oms",
-      fr:"Collection València, 3 · Valencien/Catalan · Cartographie : Xavier Oms",
-      en:"València Collection, 3 · Valencian/Catalan · Cartography: Xavier Oms",
-      de:"Reihe València, 3 · Valencianisch/Katalanisch · Kartographie: Xavier Oms" },
-    blurb:{
-      ca:"<em>Ubi sunt? Cementeris antics i mòmies a València</em> analitza l'evolució històrica, social i cultural dels espais de sepultura a la ciutat de València des de l'època romana fins al segle xix, prenent com a fil conductor la qüestió llatina «on estan?» en referència a la destinació dels nostres morts. Al llarg de les diferents parts de l'obra, s'estudien amb detall tant les necròpolis i els cementeris parroquials de les diverses èpoques (musulmana, jueva i cristiana) com el paper singular de determinades mòmies i restes rellevants conservades a la ciutat. L'epíleg de l'obra descriu el procés d'erradicació dels cementeris parroquials i la transició cap a la creació del nou Cementeri General a principis del segle XIX. Aquesta transformació, impulsada per criteris higienistes de la Il·lustració, va suposar una millora sanitària evident per a una ciutat que es nodria de pous, però va tenir un impacte urbanístic limitat i va alterar profundament una tradició mil·lenària de convivència quotidiana amb la mort, generant inicialment rebuig i incertesa en part de la societat valenciana.",
-      es:"<em>Ubi sunt? Cementerios antiguos y momias en Valencia</em> analiza la evolución histórica, social y cultural de los espacios de sepultura en la ciudad de Valencia desde la época romana hasta el siglo XIX, tomando como hilo conductor la cuestión latina «¿dónde están?» en referencia a la destinación de nuestros muertos. A lo largo de las diferentes partes de la obra, se estudian con detalle tanto las necrópolis y los cementerios parroquiales de las diversas épocas (musulmana, judía y cristiana) como el papel singular de determinadas momias y restos relevantes conservados en la ciudad. El epílogo de la obra describe el proceso de erradicación de los cementerios parroquiales y la transición hacia la creación del nuevo Cementerio General a principios del siglo XIX. Esta transformación, impulsada por criterios higienistas de la Ilustración, supuso una mejora sanitaria evidente para una ciudad que se abastecía de pozos, pero tuvo un impacto urbanístico limitado y alteró profundamente una tradición milenaria de convivencia cotidiana con la muerte, generando inicialmente rechazo e incertidumbre en parte de la sociedad valenciana.",
-      fr:"<em>Ubi sunt? Cimetières anciens et momies à Valence</em> analyse l'évolution historique, sociale et culturelle des espaces de sépulture dans la ville de Valence de l'époque romaine au XIXe siècle, en prenant comme fil conducteur la question latine « où sont-ils ? » en référence à la destination de nos morts. Au fil des différentes parties de l'ouvrage, sont étudiées en détail les nécropoles et les cimetières paroissiaux des différentes époques (musulmane, juive et chrétienne) ainsi que le rôle singulier de certaines momies et restes importants conservés dans la ville. L'épilogue de l'ouvrage décrit le processus d'éradication des cimetières paroissiaux et la transition vers la création du nouveau Cimetière Général au début du XIXe siècle. Cette transformation, impulsée par des critères hygiénistes des Lumières, supposa une amélioration sanitaire évidente pour une ville qui s'approvisionnait de puits, mais eut un impact urbanistique limité et altéra profondément une tradition millénaire de coexistence quotidienne avec la mort, générant initialement rejet et incertitude dans une partie de la société valencienne.",
-      en:"<em>Ubi sunt? Ancient Cemeteries and Mummies in València</em> analyses the historical, social and cultural evolution of burial spaces in the city of València from Roman times to the 19th century, taking as its guiding thread the Latin question \"where are they?\" in reference to the fate of our dead. Throughout the different parts of the work, the necropolises and parish cemeteries of the various eras (Muslim, Jewish and Christian) are studied in detail, as well as the singular role of certain mummies and important remains preserved in the city. The epilogue describes the process of eradication of the parish cemeteries and the transition towards the creation of the new General Cemetery in the early 19th century. This transformation, driven by the hygienist criteria of the Enlightenment, brought an evident sanitary improvement for a city fed by wells, but had a limited urban impact and profoundly altered a millennia-old tradition of daily coexistence with death, initially generating rejection and uncertainty in part of Valencian society.",
-      de:"<em>Ubi sunt? Alte Friedhöfe und Mumien in València</em> analysiert die historische, soziale und kulturelle Entwicklung der Begräbnisstätten in der Stadt València von der römischen Zeit bis zum 19. Jahrhundert, wobei die lateinische Frage »Wo sind sie?« – gemeint ist das Schicksal unserer Toten – als roter Faden dient. In den verschiedenen Teilen des Werks werden sowohl die Nekropolen und Pfarrfriedhöfe der einzelnen Epochen (muslimisch, jüdisch und christlich) als auch die besondere Rolle bestimmter Mumien und bedeutender, in der Stadt konservierter Überreste im Detail untersucht. Das Epilog beschreibt den Prozess der Beseitigung der Pfarrfriedhöfe und den Übergang zur Gründung des neuen Hauptfriedhofs zu Beginn des 19. Jahrhunderts. Dieser von hygienischen Kriterien der Aufklärung getriebene Wandel bedeutete eine deutliche gesundheitliche Verbesserung für eine Stadt, die sich von Brunnen ernährte, hatte jedoch nur begrenzte städtebauliche Auswirkungen und veränderte tief eine jahrtausendealte Tradition des alltäglichen Zusammenlebens mit dem Tod, was zunächst Ablehnung und Unsicherheit in Teilen der valencianischen Gesellschaft hervorrief." }
+    "col": "val",
+    "band": "b-green2",
+    "author": "Xavier Oms i Francesc J. Hernàndez",
+    "price": "8,00 €",
+    "labelCa": "València · 3",
+    "titleCa": "Ubi sunt?",
+    "meta": {
+      "ca": "Col·lecció València, 3 · Valencià/Català · Cartografia: Xavier Oms",
+      "es": "Colección València, 3 · Valencià/Català · Cartografía: Xavier Oms",
+      "fr": "Collection València, 3 · Valencien/Catalan · Cartographie : Xavier Oms",
+      "en": "València Collection, 3 · Valencian/Catalan · Cartography: Xavier Oms",
+      "de": "Reihe València, 3 · Valencianisch/Katalanisch · Kartographie: Xavier Oms"
+    },
+    "blurb": {
+      "ca": "<em>Ubi sunt? Cementeris antics i mòmies a València</em> analitza l'evolució històrica, social i cultural dels espais de sepultura a la ciutat de València des de l'època romana fins al segle xix, prenent com a fil conductor la qüestió llatina «on estan?» en referència a la destinació dels nostres morts. Al llarg de les diferents parts de l'obra, s'estudien amb detall tant les necròpolis i els cementeris parroquials de les diverses èpoques (musulmana, jueva i cristiana) com el paper singular de determinades mòmies i restes rellevants conservades a la ciutat. L'epíleg de l'obra descriu el procés d'erradicació dels cementeris parroquials i la transició cap a la creació del nou Cementeri General a principis del segle XIX. Aquesta transformació, impulsada per criteris higienistes de la Il·lustració, va suposar una millora sanitària evident per a una ciutat que es nodria de pous, però va tenir un impacte urbanístic limitat i va alterar profundament una tradició mil·lenària de convivència quotidiana amb la mort, generant inicialment rebuig i incertesa en part de la societat valenciana.",
+      "es": "<em>Ubi sunt? Cementerios antiguos y momias en Valencia</em> analiza la evolución histórica, social y cultural de los espacios de sepultura en la ciudad de Valencia desde la época romana hasta el siglo XIX, tomando como hilo conductor la cuestión latina «¿dónde están?» en referencia a la destinación de nuestros muertos. A lo largo de las diferentes partes de la obra, se estudian con detalle tanto las necrópolis y los cementerios parroquiales de las diversas épocas (musulmana, judía y cristiana) como el papel singular de determinadas momias y restos relevantes conservados en la ciudad. El epílogo de la obra describe el proceso de erradicación de los cementerios parroquiales y la transición hacia la creación del nuevo Cementerio General a principios del siglo XIX. Esta transformación, impulsada por criterios higienistas de la Ilustración, supuso una mejora sanitaria evidente para una ciudad que se abastecía de pozos, pero tuvo un impacto urbanístico limitado y alteró profundamente una tradición milenaria de convivencia cotidiana con la muerte, generando inicialmente rechazo e incertidumbre en parte de la sociedad valenciana.",
+      "fr": "<em>Ubi sunt? Cimetières anciens et momies à Valence</em> analyse l'évolution historique, sociale et culturelle des espaces de sépulture dans la ville de Valence de l'époque romaine au XIXe siècle, en prenant comme fil conducteur la question latine « où sont-ils ? » en référence à la destination de nos morts. Au fil des différentes parties de l'ouvrage, sont étudiées en détail les nécropoles et les cimetières paroissiaux des différentes époques (musulmane, juive et chrétienne) ainsi que le rôle singulier de certaines momies et restes importants conservés dans la ville. L'épilogue de l'ouvrage décrit le processus d'éradication des cimetières paroissiaux et la transition vers la création du nouveau Cimetière Général au début du XIXe siècle. Cette transformation, impulsée par des critères hygiénistes des Lumières, supposa une amélioration sanitaire évidente pour une ville qui s'approvisionnait de puits, mais eut un impact urbanistique limité et altéra profondément une tradition millénaire de coexistence quotidienne avec la mort, générant initialement rejet et incertitude dans une partie de la société valencienne.",
+      "en": "<em>Ubi sunt? Ancient Cemeteries and Mummies in València</em> analyses the historical, social and cultural evolution of burial spaces in the city of València from Roman times to the 19th century, taking as its guiding thread the Latin question \"where are they?\" in reference to the fate of our dead. Throughout the different parts of the work, the necropolises and parish cemeteries of the various eras (Muslim, Jewish and Christian) are studied in detail, as well as the singular role of certain mummies and important remains preserved in the city. The epilogue describes the process of eradication of the parish cemeteries and the transition towards the creation of the new General Cemetery in the early 19th century. This transformation, driven by the hygienist criteria of the Enlightenment, brought an evident sanitary improvement for a city fed by wells, but had a limited urban impact and profoundly altered a millennia-old tradition of daily coexistence with death, initially generating rejection and uncertainty in part of Valencian society.",
+      "de": "<em>Ubi sunt? Alte Friedhöfe und Mumien in València</em> analysiert die historische, soziale und kulturelle Entwicklung der Begräbnisstätten in der Stadt València von der römischen Zeit bis zum 19. Jahrhundert, wobei die lateinische Frage »Wo sind sie?« – gemeint ist das Schicksal unserer Toten – als roter Faden dient. In den verschiedenen Teilen des Werks werden sowohl die Nekropolen und Pfarrfriedhöfe der einzelnen Epochen (muslimisch, jüdisch und christlich) als auch die besondere Rolle bestimmter Mumien und bedeutender, in der Stadt konservierter Überreste im Detail untersucht. Das Epilog beschreibt den Prozess der Beseitigung der Pfarrfriedhöfe und den Übergang zur Gründung des neuen Hauptfriedhofs zu Beginn des 19. Jahrhunderts. Dieser von hygienischen Kriterien der Aufklärung getriebene Wandel bedeutete eine deutliche gesundheitliche Verbesserung für eine Stadt, die sich von Brunnen ernährte, hatte jedoch nur begrenzte städtebauliche Auswirkungen und veränderte tief eine jahrtausendealte Tradition des alltäglichen Zusammenlebens mit dem Tod, was zunächst Ablehnung und Unsicherheit in Teilen der valencianischen Gesellschaft hervorrief."
+    },
+    "tag": {
+      "ca": "Un llibre imprescindible per conéixer els secrets que amaga València"
+    }
+  },
+  {
+    "col": "imp",
+    "band": "b-gold1",
+    "author": "Robert H. Jackson et al.",
+    "price": "6,00 €",
+    "titleCa": "Crims contra la Humanitat",
+    "tag": {
+      "ca": "En els al·legats dels fiscals en els Judicis de Núremberg s'encunyà el concepte de Crim contra la Humanitat. Uns textos indispensables per a entendre el Dret i la Història."
+    },
+    "meta": {
+      "ca": "Col·lecció Imprescindibles, 1 · Valencià/Català · Trad.: Cristina Domingo i Francesc J. Hernàndez",
+      "es": "Colección Imprescindibles, 1 · Valencià/Català · Trad.: Cristina Domingo y Francesc J. Hernàndez",
+      "fr": "Collection Indispensables, 1 · Valencien/Catalan · Trad. : Cristina Domingo et Francesc J. Hernàndez",
+      "en": "Essentials Collection, 1 · Valencian/Catalan · Trans.: Cristina Domingo & F. J. Hernàndez",
+      "de": "Reihe Unverzichtbares, 1 · Valencianisch/Katalanisch · Übers.: C. Domingo u. F. J. Hernàndez"
+    },
+    "blurb": {
+      "ca": "El nazisme és el feixisme desbocat. El feixisme no és una <em>filosofia</em> perquè, com va escriure Georg Lukács, qualsevol estudiant de primer curs podria refutar-la. Tampoc no és una <em>política</em>, llevat que s'elimine d'aquest concepte la referència a l'ètica que té des d'Aristòtil. El feixisme és el menyspreu per la dignitat dels éssers humans i ho acredita el nazisme i les seues bàrbares conseqüències, palesades per la història i, paradigmàticament, el conjunt d'al·legats i condemnes de les acusacions en els Judicis de Nuremberg.\nPàg\nEls Judicis de Nuremberg foren, en realitat, tretze processos: el principal, en el qual fou encausada la cúpula nazi, i dotze més (que es realitzaren entre el 9 de desembre de 1946 i el 13 d'abril de 1949), on respongueren per crims contra la humanitat (hi fou on s'encunyà aquest concepte) i de guerra diversos grups d'acusats. En aquest llibre arrepleguem els al·legats inicials de la fiscalia del procés principal, el document històric del dret del fiscal Jackson, i en tres d'aquests processos posteriors: el <em>Cas Mèdic</em>, el <em>Cas Milch</em> i el <em>Cas dels Einsatzgruppen</em>.\nPàg\nEl text s'ha fixat amb la comparació de l'edició oficial en quatre volums (<em>Trials of War Criminals before the Nuernberg Military Tribunals</em>) i la transcripció realitzada per la Universitat de Harvard de les 21.718 pàgines d'aquests tres processos. S'afegeixen notes al peu dels editors i alguns annexos explicatius. L'objectiu d'aquesta publicació ja fou determinat pel fiscal en cap del procés, Robert H. Jackson: «Els mals que pretenem condemnar i castigar han sigut tan calculats, tan malignes i tan devastadors, que la civilització no pot tolerar que s'ignoren, perquè no podrà sobreviure si es repeteixen.»"
+    }
+  },
+  {
+    "col": "imp",
+    "band": "b-gold2",
+    "author": "Adam Czerniakow",
+    "price": "6,00 €",
+    "titleCa": "Diari del Gueto de Varsòvia",
+    "tag": {
+      "ca": "Sense dubte, un dels llibres més terribles que es poden llegir... i que s'han de llegir."
+    },
+    "meta": {
+      "ca": "Col·lecció Imprescindibles, 2 · Valencià/Català · Trad.: Ester Vila",
+      "es": "Colección Imprescindibles, 2 · Valencià/Català · Trad.: Ester Vila",
+      "fr": "Collection Indispensables, 2 · Valencien/Catalan · Trad. : Ester Vila",
+      "en": "Essentials Collection, 2 · Valencian/Catalan · Trans.: Ester Vila",
+      "de": "Reihe Unverzichtbares, 2 · Valencianisch/Katalanisch · Übers.: Ester Vila"
+    },
+    "blurb": {
+      "ca": "«El preludi de l'infern» és el subtítol de la traducció anglesa. En realitat, el Gueto de Varsòvia ja fou l'infern mateix, una experiència dantesca que ací observem des de la perspectiva d'un home notable, el cap del Consell Jueu de Varsòvia, Adam Czerniakow. El seu diari és, sense dubte, no només una font de coneixement històric sobre la Barbàrie i la Guerra Mundial, sinó també un document valuosíssim sobre el compromís amb la comunitat i la desesperació davant de la fatalitat, sobre els mecanismes de la violència i l'extermini."
+    }
+  },
+  {
+    "col": "imp",
+    "band": "b-gold3",
+    "author": "Paul W. Massing",
+    "price": "6,00 €",
+    "titleCa": "Ensayo para la destrucción",
+    "tag": {
+      "es": "El último, todavía inédito en castellano, de la serie de Estudios sobre el Prejuicio, la gran obra colectiva de la Escuela de Fráncfort en el exilio de Estados Unidos."
+    },
+    "meta": {
+      "ca": "Col·lecció Imprescindibles, 3 · Castellà · Trad.: Francesc J. Hernàndez · Pròleg de M. Horkheimer i T. W. Adorno",
+      "es": "Colección Imprescindibles, 3 · Castellano · Traducción: Francesc J. Hernàndez · Prólogo de Max Horkheimer y Theodor W. Adorno",
+      "fr": "Collection Indispensables, 3 · Espagnol · Trad. : Francesc J. Hernàndez · Préface de M. Horkheimer et T. W. Adorno",
+      "en": "Essentials Collection, 3 · Spanish · Trans.: F. J. Hernàndez · Foreword by M. Horkheimer & T. W. Adorno",
+      "de": "Reihe Unverzichtbares, 3 · Spanisch · Übers.: F. J. Hernàndez · Vorwort von M. Horkheimer u. T. W. Adorno"
+    },
+    "blurb": {
+      "es": "«Cualquiera que quiera comprender el antisemitismo totalitario no debería caer en la tentación de equiparar su explicación con una especie de necesidad natural. En retrospectiva, ciertamente parece como si tuviera que suceder así y no pudiera haber sido de otra manera. Entre las figuras famosas del pasado alemán, hasta Kant y Goethe, solo se pueden nombrar unas pocas que estaban completamente libres de sentimientos antisemitas. Pero al insistir en tal universalidad y repetir la fatalidad de lo sucedido en el concepto mismo, uno, en cierto sentido, se lo apropia. En todas partes del pasado alemán, las huellas de la catástrofe inminente van acompañadas de su opuesto, y la sabiduría de decretar ex post facto lo que era más fuerte desde el principio facilita demasiado las cosas al presuponer la realidad como el único resultado posible. En Francia, algunos de los dreyfusianos más valientes, como Zola y Anatole France, ocasionalmente incluyeron representaciones de judíos en sus novelas que se asemejaban a los mismos clichés contra cuyas consecuencias luchaban. La experiencia de la historia incluye también la conciencia de lo que no se realiza plenamente, de lo que es difuso y ambiguo.\nPàg\nAquí, quizás, el libro de Massing hace una contribución crucial. Ayuda a desentrañar el nudo entre lo accidental y lo necesario, de manera racional. Si bien se centra en el potencial amorfo, omnipresente, pero nunca del todo cierto, de odio al judaísmo dentro de la población, sin deducir necesariamente una catástrofe de ello, su investigación llega al punto en que se aclara por qué prevaleció ese potencial. Demuestra con pruebas contundentes, basadas en hechos históricos, que en la Alemania de Bismarck, el antisemitismo fue manipulado políticamente y, según las exigencias del momento y los intereses del momento, se activó y desactivó. Esos levantamientos populares espontáneos del Tercer Reich, que estallaron de forma bien organizada ante una señal, tuvieron sus precursores en los movimientos de Stoecker y Ahlwardt, que fueron controlados de manera oportunista y que, con un refinado aire conservador, pudieron utilizarse para mantener la paz y el orden con la misma facilidad con la que pudieron desatarse contra la socialdemocracia. Sin negar la receptividad de las masas a tales estímulos, su grado de culpa se relativiza simultáneamente: quienes claman contra las víctimas se revelan como víctimas, como peones manipulados por el poder político. El antisemitismo se fundamenta en condiciones sociales objetivas, así como en la conciencia e inconsciencia de las masas. Pero se manifiesta como una herramienta política: como una herramienta para integrar intereses grupales divergentes; como la forma más rápida y segura de distraer la atención de una necesidad vital para la cual existen otros medios.» (Del prólogo de Max Horkheimer y Theodor W. Adorno)."
+    }
   }
 ];
 
@@ -504,22 +896,35 @@ function bookHTML(b){
 function cardHTML(b){
   const t = UI[lang];
   const { covers, titles } = bookHTML(b);
-  const blurbTxt = b.blurb ? b.blurb[lang] : null;
-  const blurb = blurbTxt
-    ? `<div class="blurb clamped">${blurbTxt.replace(/^Pàg\n/,'').split('\nPàg\n').map(p=>`<p>${esc(p)}</p>`).join('')}</div>
+  const blurbRaw = b.blurb ? (b.blurb[lang] || b.blurb.ca || b.blurb.es) : null;
+  const blurb = blurbRaw
+    ? `<div class="blurb clamped">${blurbRaw.replace(/^Pàg\n/,'').split('\nPàg\n').map(p=>`<p>${esc(p)}</p>`).join('')}</div>
        <button class="more" onclick="toggleMore(this)" aria-label="+">+</button>` : '';
+  const tagRaw = b.tag ? (b.tag[lang] || b.tag.ca || b.tag.es) : null;
+  const tagline = tagRaw ? `<p class="tagline">«${esc(tagRaw)}»</p>` : '';
   const freeBtn = b.free
     ? `<a class="btn ghost" href="#" title="${esc(b.free[lang])}" onclick="return fakeLink(event)">${t.freeDl} ↓</a>` : '';
+  let buyBtn;
+  if(typeof b.stripe === 'string'){
+    buyBtn = `<a class="btn solid" href="${b.stripe}" target="_blank" rel="noopener">${t.buy} · ${b.price}</a>`;
+  } else if(b.stripe && b.stripe.ca && b.stripe.es){
+    buyBtn = `<a class="btn solid" href="${b.stripe.ca}" target="_blank" rel="noopener">${t.buy} (${t.buyVal}) · ${b.price}</a>
+        <a class="btn solid" href="${b.stripe.es}" target="_blank" rel="noopener">${t.buy} (${t.buyCast}) · ${b.price}</a>`;
+  } else {
+    buyBtn = `<a class="btn solid" href="#" onclick="return fakeLink(event)">${t.buy} · ${b.price}</a>`;
+  }
+  const isbnTxt = b.isbn ? ` · ISBN: ${b.isbn}` : '';
   return `<article class="card">
     <div class="book">${covers}</div>
     <div class="card-info">
-      <p class="card-meta">${esc(b.meta[lang])}</p>
+      <p class="card-meta">${esc(b.meta[lang])}${isbnTxt}</p>
       ${titles}
       <p class="author">${esc(b.author)}</p>
+      ${tagline}
       ${blurb}
       <div class="card-actions">
         <a class="btn ghost" href="#" onclick="return fakeLink(event)">${t.dl}</a>
-        <a class="btn solid" href="#" onclick="return fakeLink(event)">${t.buy} · ${b.price}</a>
+        ${buyBtn}
         ${freeBtn}
       </div>
     </div>
@@ -538,6 +943,7 @@ function render(){
   document.querySelectorAll('[data-i18n]').forEach(el=>{ el.innerHTML = t[el.dataset.i18n]; });
   document.getElementById('grid-lit').innerHTML = BOOKS.filter(b=>b.col==='lit').map(cardHTML).join('');
   document.getElementById('grid-val').innerHTML = BOOKS.filter(b=>b.col==='val').map(cardHTML).join('');
+  document.getElementById('grid-imp').innerHTML = BOOKS.filter(b=>b.col==='imp').map(cardHTML).join('');
   document.querySelectorAll('.langs button').forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
 }
 
@@ -557,7 +963,7 @@ document.querySelectorAll('.langs button').forEach(b=>{
 
 /* Tabs */
 const tabs = document.querySelectorAll('.tab');
-const panels = { lit:'panel-lit', val:'panel-val', mus:'panel-mus' };
+const panels = { lit:'panel-lit', val:'panel-val', mus:'panel-mus', imp:'panel-imp' };
 tabs.forEach(tab=>{
   tab.addEventListener('click', ()=>{
     tabs.forEach(x=>x.classList.remove('active'));
@@ -572,5 +978,6 @@ tabs.forEach(tab=>{
 
 render();
 </script>
-</body>
-</html>
+
+
+</body></html>
