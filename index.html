@@ -53,7 +53,7 @@
   /* ---------- Logotip (img) + tooltip ---------- */
   .logo-img-wrap{position:relative; display:inline-flex; align-items:center; text-decoration:none; border-radius:12px}
   .logo-img{
-    height:92px; width:auto; display:block;
+    height:138px; width:auto; display:block;
     filter:drop-shadow(0 3px 10px rgba(0,0,0,.4));
     transition:transform .35s var(--ease), filter .35s var(--ease);
   }
@@ -71,10 +71,10 @@
   }
   .logo-img-wrap:hover .logo-tip,
   .logo-img-wrap:focus-visible .logo-tip{opacity:1; transform:translate(-50%,0)}
-  @media (max-width:560px){ .logo-img{height:72px} }
+  @media (max-width:560px){ .logo-img{height:108px} }
 
   /* ---------- Tabs ---------- */
-  .tabs-wrap{position:sticky; top:122px; z-index:40; background:color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--line); transition:background .8s var(--ease)}
+  .tabs-wrap{position:sticky; top:168px; z-index:40; background:color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--line); transition:background .8s var(--ease)}
   .tabs-in{
     max-width:1200px; margin:0 auto; padding:.6rem 1.25rem;
     display:flex; align-items:center; gap:1.2rem;
@@ -101,6 +101,7 @@
   .tab.active{background:var(--ink); color:var(--bg); border-color:var(--ink)}
   .tab.active .dot{background:var(--bg) !important}
   @media (max-width:560px){ .tabs-in{flex-wrap:wrap; row-gap:.35rem} .tabs{flex-basis:100%} }
+  @media (max-width:560px){ .tabs-wrap{top:138px} }
 
   /* ---------- Panels ---------- */
   main{max-width:1200px; margin:0 auto; padding:2.5rem 1.25rem 4rem; position:relative}
