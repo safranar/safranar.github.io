@@ -4,6 +4,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Editorial SAFRANAR — València</title>
+<link rel="icon" type="image/png" href="logo-safranar.png">
 <link rel="preconnect" href="https://fonts.googleapis.com/">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
 <link href="./Editorial SAFRANAR — València_files/css2" rel="stylesheet">
@@ -48,6 +49,29 @@
   }
   .langs button:hover{color:var(--ink)}
   .langs button.active{background:var(--accent); color:var(--accent-ink)}
+
+  /* ---------- Logotip (img) + tooltip ---------- */
+  .logo-img-wrap{position:relative; display:inline-flex; align-items:center; text-decoration:none; border-radius:12px}
+  .logo-img{
+    height:46px; width:auto; display:block;
+    filter:drop-shadow(0 3px 10px rgba(0,0,0,.4));
+    transition:transform .35s var(--ease), filter .35s var(--ease);
+  }
+  .logo-img-wrap:hover .logo-img{transform:translateY(-1px) scale(1.03); filter:drop-shadow(0 6px 16px rgba(0,0,0,.5))}
+  .logo-tip{
+    position:absolute; top:calc(100% + 10px); left:50%; transform:translate(-50%,-6px);
+    background:var(--ink); color:var(--bg); font:600 .72rem var(--sans); letter-spacing:.04em;
+    padding:.45rem .95rem; border-radius:999px; white-space:nowrap;
+    box-shadow:0 8px 24px rgba(0,0,0,.45); opacity:0; pointer-events:none;
+    transition:opacity .3s var(--ease), transform .3s var(--ease); z-index:60;
+  }
+  .logo-tip::before{
+    content:''; position:absolute; bottom:100%; left:50%; transform:translateX(-50%);
+    border:5px solid transparent; border-bottom-color:var(--ink);
+  }
+  .logo-img-wrap:hover .logo-tip,
+  .logo-img-wrap:focus-visible .logo-tip{opacity:1; transform:translate(-50%,0)}
+  @media (max-width:560px){ .logo-img{height:36px} }
 
   /* ---------- Tabs ---------- */
   .tabs-wrap{position:sticky; top:57px; z-index:40; background:color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--line); transition:background .8s var(--ease)}
@@ -213,6 +237,7 @@
   }
   #toast.on{transform:translate(-50%,0)}
 </style>
+<!--<base target="_blank">--><!--<base href="." target="_blank">--><base href="." target="_blank">
 <!--<base target="_blank">--><base href="." target="_blank">
 <base target="_blank">
 </head>
@@ -220,7 +245,10 @@
 
 <header>
   <div class="header-in">
-    <a class="logo" href="https://safranar.github.io/#"><small>EDITORIAL</small>SAFRANAR</a>
+    <a class="logo-img-wrap" href="https://safranar.github.io/#" aria-label="Editorial Safranar">
+      <img class="logo-img" src="logo-safranar.png" alt="Editorial Safranar">
+      <span class="logo-tip" role="tooltip">Disseny de Tomàs Gorria</span>
+    </a>
     <nav class="langs" aria-label="Idioma / Language">
       <button data-lang="ca" class="active">CA</button>
       <button data-lang="es">ES</button>
@@ -263,7 +291,7 @@
       <div class="blurb clamped"><p><em>Cinc casquets de cartutxos</em> de Walter Gorrish és un guió cinematogràfic que adapta la pròpia experiència de l'autor a les Brigades Internacionals durant la Guerra Civil Espanyola. La història segueix un grup de set combatents estrangers i espanyols que, a la primavera de 1938 al Front de l'Ebre, reben la perillosa missió de cobrir la retirada del seu batalló sense munició ni provisions. Assetjats per la set, la fam i les tropes feixistes, els protagonistes guarden fragments d'un mapa estratègic en casquets de bala per fer-lo arribar a l'estat major. Al llarg de la trama, personatges clau com el comandant Sander i l'operador de ràdio Wasja sacrifiquen les seues vides per la causa antifeixista. Finalment, malgrat les pèrdues i el sofriment extrem, els supervivents aconsegueixen arribar a un riu, simbolitzant la resistència i la victòria final de la solidaritat internacional.</p></div>
        <button class="more" onclick="toggleMore(this)" aria-label="+">+</button>
       <div class="card-actions">
-        <a class="btn ghost" href="#" onclick="return fakeLink(event)">Descarregar prova de lectura</a>
+        <a class="btn ghost" href="https://safranar.github.io/#" onclick="return fakeLink(event)">Descarregar prova de lectura</a>
         <a class="btn solid" href="https://buy.stripe.com/3cI4gB0j5g1H87KdrT2Fa04" target="_blank" rel="noopener">Adquirir-lo · 8,00 €</a>
         
       </div>
@@ -284,7 +312,7 @@
       <div class="blurb clamped"><p><em>¡Valencia! Amores de España</em> (1928), d'Adolphe Falgairolle, narra en primera persona les vivències de Jean, un cineasta francés que passa les seues estances entre les cims pirinenques de Torrebuena i la ciutat de València amb la família de Don Cristóbal Águilas. Don Cristóbal té cinc filles de dos matrimonis: per una banda, les bessones Amparo i Dorita, caracteritzades per la seua aparent inèrcia i nihilisme quotidià; per altra, Teresa, una jove decidida i vital. Jean entaula un profund llaç sentimental amb Teresa. Tanmateix, la precària situació econòmica de Don Cristóbal empeny Teresa a casar-se per conveniència amb un ric industrial català. Temps després, Jean i Teresa reprenguen la seua passió clandestina a París i València. Les germanastres Amparo i Dorita, actuant com a observadores manipuladores, descobreixen el romanç i delaten la parella, provocant que Teresa siga reclosa al convent de Santa Agripina. Finalment, Jean, amb la col·laboració del seu amic Antonio i mitjançant falses declaracions i influències, aconsegueix rescatar Teresa i fugir amb ella en barco cap a Sudamérica.</p><p><em>Valencia entre dos sueños</em> (1931), de Georges Pillement, és una obra de tall líric, nostàlgic i al·lucinatori, estructurada al voltant dels records del protagonista, Jorge, en dues etapes de la seua vida (als 17 i als 26 anys) a València. Jorge es debat entre dues figures femenines: Pepita, una jove valenciana ingènua, tímida i idealitzada que coneix des de l'adolescència, i Donya Luisa, la jove i elegant marquesa viuda de Dos Aguas. Durant una vetlada al Palau del Marqués de Dos Aguas, Jorge i Luisa exploren els passadissos i estances secretes de l'edifici. Un accident amb un conjunt d'antics autòmats i un cavall mecànicament descontrolat provoca la mort de Luisa i deixa Jorge en un coma de dos dies. Durant aqueix lapse, Jorge experimenta una vivència espectral creient-se un fantasma junt amb l'esperit de Luisa. Després de despertar, acaba casant-se amb Pepita i traslladant-se a un castell a Gandia, condemnat a viure dividit entre la presència terrenal de la seua esposa i l'ombra constant i invisible de Luisa.</p></div>
        <button class="more" onclick="toggleMore(this)" aria-label="+">+</button>
       <div class="card-actions">
-        <a class="btn ghost" href="#" onclick="return fakeLink(event)">Descarregar prova de lectura</a>
+        <a class="btn ghost" href="https://safranar.github.io/#" onclick="return fakeLink(event)">Descarregar prova de lectura</a>
         <a class="btn solid" href="https://buy.stripe.com/3cIaEZ4zl4iZ4VyevX2Fa03" target="_blank" rel="noopener">Adquirir-lo · 8,00 €</a>
         
       </div>
@@ -305,10 +333,10 @@
       <div class="blurb clamped"><p>Aquesta és una obra fonamental d'Oskar Panizza, conegut per l'obra de teatre <em>El concili de l'amor</em>, que li valgué la persecució per impietat de l'Estat prussià. Ací, Panizza es presenta com el traductor i anotador d'una suposada obra del germà Martí, un monjo benedictí de Montserrat, que argumenta i dona proves teològiques sobre la Immaculada Concepció dels Papes. Es repassen les fonts historico-religioses, s'analitza el dogma de la Immaculada Concepció, explorant tant l'origen com l'evolució doctrinal entorn de la figura de la Verge Maria i la seua naturalesa exempta de pecat original. L'obra examina també la figura i omnipotència dels Papes, equiparant-ne l'autoritat i creació contínua amb poders divins dins de la jerarquia de l'Església Catòlica. A més, es detallen diverses etapes teològiques, debats escolàstics i moments clau de la història eclesiàstica per argumentar com el poder papal i la gràcia divina s'estenen tant sobre la terra com en l'espai i el passat. Finalment, els textos reflecteixen la controvèrsia i l'acceptació dogmàtica d'aquests misteris a través dels segles, culminant en les proclamacions oficials de Pius IX a Roma. L'obra, per tant, és una magistral obra irònica, que es caracteritza per la finor dels raonaments i els coneixements teològics de Panizza, que pretén defugir de la censura amb la forma d'una traducció d'una obra en altra llengua. Un monument del pensament laic i antieclesiàstic.</p></div>
        <button class="more" onclick="toggleMore(this)" aria-label="+">+</button>
       <div class="card-actions">
-        <a class="btn ghost" href="#" onclick="return fakeLink(event)">Descarregar prova de lectura</a>
+        <a class="btn ghost" href="https://safranar.github.io/#" onclick="return fakeLink(event)">Descarregar prova de lectura</a>
         <a class="btn solid" href="https://buy.stripe.com/dRmaEZ3vh4iZco01Jb2Fa02" target="_blank" rel="noopener">Adquirir-lo (val.) · 8,00 €</a>
         <a class="btn solid" href="https://buy.stripe.com/9B6fZj4zl8zf0FibjL2Fa01" target="_blank" rel="noopener">Adquirir-lo (cast.) · 8,00 €</a>
-        <a class="btn ghost" href="#" title="Oskar Panizza: Crist, sota una llum psicopatològica" onclick="return fakeLink(event)">Descàrrega lliure ↓</a>
+        <a class="btn ghost" href="https://safranar.github.io/#" title="Oskar Panizza: Crist, sota una llum psicopatològica" onclick="return fakeLink(event)">Descàrrega lliure ↓</a>
       </div>
     </div>
   </article><article class="card">
@@ -327,7 +355,7 @@
       <div class="blurb clamped"><p>A través de cinc parts inspirades en els cinc sentits, la novel·la narra les peripecies d'un matrimoni de jubilats, format per Isabel Ivars i Bernardo Beltrán, que es veu embolicat en investigacions rocambolesques. Tot comença quan descobreixen un cadàver momificat d'un coronel franquista amagat sota l'ascensor de la finca familiar, un cas que els duu a destapar secrets del passat, connexions amb la reialesa en l'exili i vells contes infantils convertits en realitat. A partir d'aleshores, la seua aparentment tranquil·la jubilació es veu sacsejada per episodis insòlits que inclouen des d'un tiroteig en una cabana rural a Xelva, provocat per rancors de la Guerra Civil, fins a l'espionatge d'una trama d'estafa financera internacional amb agulles mèdiques intel·ligents per una finestra indiscreta del pis de damunt. El periple vital de la parella continua amb un viatge transatlàntic a Mèxic per resoldre l'hereència d'un antic lluitador de catch. Seran segrestats per narcotraficants i s'enfrontaran a la trama valenciana de l'assassinat de Trotski. En l'última part, es veuran embolicats en un assassinat a l'editorial Espigol, un assumpte de falsificacions i enveges en el qual l'assassí era el lector.</p></div>
        <button class="more" onclick="toggleMore(this)" aria-label="+">+</button>
       <div class="card-actions">
-        <a class="btn ghost" href="#" onclick="return fakeLink(event)">Descarregar prova de lectura</a>
+        <a class="btn ghost" href="https://safranar.github.io/#" onclick="return fakeLink(event)">Descarregar prova de lectura</a>
         <a class="btn solid" href="https://buy.stripe.com/fZudRbd5R02J5ZCafH2Fa00" target="_blank" rel="noopener">Adquirir-lo · 6,00 €</a>
         
       </div>
@@ -355,9 +383,9 @@
       <div class="blurb clamped"><p>El llibre és una invitació a llegir un escrit de Joan Lluís Vives, el diàleg que s'anomena <em>Les lleis del joc</em>, publicat en el seu <em>Exercici de Llengua Llatina</em> (1539). El text descriu un passeig per la ciutat de València, que comença a la plaça Nàpols i Sicília i finalitza en la plaça de la Mare de Déu. Pot llegir-lo i, al mateix temps, recórrer els carrers i les places que s'hi esmenten. El text del diàleg de Vives es troba en els capítols 2n, 6é, 10é, 12é, 14é i 19é del llibre; la resta de capítols són explicacions complementàries per gaudir de la prosa de l'humanista i del passeig. A la fi, hi ha un annex amb un elogi de Vives de la seua ciutat i un altre amb informació bibliogràfica. Pel que fa al text de Vives, s'ha actualitzat la traducció dels <em>Diàlegs</em> realitzada per Josep Pin i Soler i publicada a Barcelona el 1915.</p></div>
        <button class="more" onclick="toggleMore(this)" aria-label="+">+</button>
       <div class="card-actions">
-        <a class="btn ghost" href="#" onclick="return fakeLink(event)">Descarregar prova de lectura</a>
-        <a class="btn solid" href="#" onclick="return fakeLink(event)">Adquirir-lo · 8,00 €</a>
-        <a class="btn ghost" href="#" title="Francesc J. Hernàndez: El projecte filosòfic de Joan Lluís Vives" onclick="return fakeLink(event)">Descàrrega lliure ↓</a>
+        <a class="btn ghost" href="https://safranar.github.io/#" onclick="return fakeLink(event)">Descarregar prova de lectura</a>
+        <a class="btn solid" href="https://safranar.github.io/#" onclick="return fakeLink(event)">Adquirir-lo · 8,00 €</a>
+        <a class="btn ghost" href="https://safranar.github.io/#" title="Francesc J. Hernàndez: El projecte filosòfic de Joan Lluís Vives" onclick="return fakeLink(event)">Descàrrega lliure ↓</a>
       </div>
     </div>
   </article><article class="card">
@@ -376,8 +404,8 @@
       <div class="blurb clamped"><p><em>Ubi sunt? Cementeris antics i mòmies a València</em> analitza l'evolució històrica, social i cultural dels espais de sepultura a la ciutat de València des de l'època romana fins al segle xix, prenent com a fil conductor la qüestió llatina «on estan?» en referència a la destinació dels nostres morts. Al llarg de les diferents parts de l'obra, s'estudien amb detall tant les necròpolis i els cementeris parroquials de les diverses èpoques (musulmana, jueva i cristiana) com el paper singular de determinades mòmies i restes rellevants conservades a la ciutat. L'epíleg de l'obra descriu el procés d'erradicació dels cementeris parroquials i la transició cap a la creació del nou Cementeri General a principis del segle XIX. Aquesta transformació, impulsada per criteris higienistes de la Il·lustració, va suposar una millora sanitària evident per a una ciutat que es nodria de pous, però va tenir un impacte urbanístic limitat i va alterar profundament una tradició mil·lenària de convivència quotidiana amb la mort, generant inicialment rebuig i incertesa en part de la societat valenciana.</p></div>
        <button class="more" onclick="toggleMore(this)" aria-label="+">+</button>
       <div class="card-actions">
-        <a class="btn ghost" href="#" onclick="return fakeLink(event)">Descarregar prova de lectura</a>
-        <a class="btn solid" href="#" onclick="return fakeLink(event)">Adquirir-lo · 8,00 €</a>
+        <a class="btn ghost" href="https://safranar.github.io/#" onclick="return fakeLink(event)">Descarregar prova de lectura</a>
+        <a class="btn solid" href="https://safranar.github.io/#" onclick="return fakeLink(event)">Adquirir-lo · 8,00 €</a>
         
       </div>
     </div>
@@ -404,8 +432,8 @@
       <div class="blurb clamped"><p>El nazisme és el feixisme desbocat. El feixisme no és una <em>filosofia</em> perquè, com va escriure Georg Lukács, qualsevol estudiant de primer curs podria refutar-la. Tampoc no és una <em>política</em>, llevat que s'elimine d'aquest concepte la referència a l'ètica que té des d'Aristòtil. El feixisme és el menyspreu per la dignitat dels éssers humans i ho acredita el nazisme i les seues bàrbares conseqüències, palesades per la història i, paradigmàticament, el conjunt d'al·legats i condemnes de les acusacions en els Judicis de Nuremberg.</p><p>Els Judicis de Nuremberg foren, en realitat, tretze processos: el principal, en el qual fou encausada la cúpula nazi, i dotze més (que es realitzaren entre el 9 de desembre de 1946 i el 13 d'abril de 1949), on respongueren per crims contra la humanitat (hi fou on s'encunyà aquest concepte) i de guerra diversos grups d'acusats. En aquest llibre arrepleguem els al·legats inicials de la fiscalia del procés principal, el document històric del dret del fiscal Jackson, i en tres d'aquests processos posteriors: el <em>Cas Mèdic</em>, el <em>Cas Milch</em> i el <em>Cas dels Einsatzgruppen</em>.</p><p>El text s'ha fixat amb la comparació de l'edició oficial en quatre volums (<em>Trials of War Criminals before the Nuernberg Military Tribunals</em>) i la transcripció realitzada per la Universitat de Harvard de les 21.718 pàgines d'aquests tres processos. S'afegeixen notes al peu dels editors i alguns annexos explicatius. L'objectiu d'aquesta publicació ja fou determinat pel fiscal en cap del procés, Robert H. Jackson: «Els mals que pretenem condemnar i castigar han sigut tan calculats, tan malignes i tan devastadors, que la civilització no pot tolerar que s'ignoren, perquè no podrà sobreviure si es repeteixen.»</p></div>
        <button class="more" onclick="toggleMore(this)" aria-label="+">+</button>
       <div class="card-actions">
-        <a class="btn ghost" href="#" onclick="return fakeLink(event)">Descarregar prova de lectura</a>
-        <a class="btn solid" href="#" onclick="return fakeLink(event)">Adquirir-lo · 6,00 €</a>
+        <a class="btn ghost" href="https://safranar.github.io/#" onclick="return fakeLink(event)">Descarregar prova de lectura</a>
+        <a class="btn solid" href="https://safranar.github.io/#" onclick="return fakeLink(event)">Adquirir-lo · 6,00 €</a>
         
       </div>
     </div>
@@ -425,8 +453,8 @@
       <div class="blurb clamped"><p>«El preludi de l'infern» és el subtítol de la traducció anglesa. En realitat, el Gueto de Varsòvia ja fou l'infern mateix, una experiència dantesca que ací observem des de la perspectiva d'un home notable, el cap del Consell Jueu de Varsòvia, Adam Czerniakow. El seu diari és, sense dubte, no només una font de coneixement històric sobre la Barbàrie i la Guerra Mundial, sinó també un document valuosíssim sobre el compromís amb la comunitat i la desesperació davant de la fatalitat, sobre els mecanismes de la violència i l'extermini.</p></div>
        <button class="more" onclick="toggleMore(this)" aria-label="+">+</button>
       <div class="card-actions">
-        <a class="btn ghost" href="#" onclick="return fakeLink(event)">Descarregar prova de lectura</a>
-        <a class="btn solid" href="#" onclick="return fakeLink(event)">Adquirir-lo · 6,00 €</a>
+        <a class="btn ghost" href="https://safranar.github.io/#" onclick="return fakeLink(event)">Descarregar prova de lectura</a>
+        <a class="btn solid" href="https://safranar.github.io/#" onclick="return fakeLink(event)">Adquirir-lo · 6,00 €</a>
         
       </div>
     </div>
@@ -446,8 +474,8 @@
       <div class="blurb clamped"><p>«Cualquiera que quiera comprender el antisemitismo totalitario no debería caer en la tentación de equiparar su explicación con una especie de necesidad natural. En retrospectiva, ciertamente parece como si tuviera que suceder así y no pudiera haber sido de otra manera. Entre las figuras famosas del pasado alemán, hasta Kant y Goethe, solo se pueden nombrar unas pocas que estaban completamente libres de sentimientos antisemitas. Pero al insistir en tal universalidad y repetir la fatalidad de lo sucedido en el concepto mismo, uno, en cierto sentido, se lo apropia. En todas partes del pasado alemán, las huellas de la catástrofe inminente van acompañadas de su opuesto, y la sabiduría de decretar ex post facto lo que era más fuerte desde el principio facilita demasiado las cosas al presuponer la realidad como el único resultado posible. En Francia, algunos de los dreyfusianos más valientes, como Zola y Anatole France, ocasionalmente incluyeron representaciones de judíos en sus novelas que se asemejaban a los mismos clichés contra cuyas consecuencias luchaban. La experiencia de la historia incluye también la conciencia de lo que no se realiza plenamente, de lo que es difuso y ambiguo.</p><p>Aquí, quizás, el libro de Massing hace una contribución crucial. Ayuda a desentrañar el nudo entre lo accidental y lo necesario, de manera racional. Si bien se centra en el potencial amorfo, omnipresente, pero nunca del todo cierto, de odio al judaísmo dentro de la población, sin deducir necesariamente una catástrofe de ello, su investigación llega al punto en que se aclara por qué prevaleció ese potencial. Demuestra con pruebas contundentes, basadas en hechos históricos, que en la Alemania de Bismarck, el antisemitismo fue manipulado políticamente y, según las exigencias del momento y los intereses del momento, se activó y desactivó. Esos levantamientos populares espontáneos del Tercer Reich, que estallaron de forma bien organizada ante una señal, tuvieron sus precursores en los movimientos de Stoecker y Ahlwardt, que fueron controlados de manera oportunista y que, con un refinado aire conservador, pudieron utilizarse para mantener la paz y el orden con la misma facilidad con la que pudieron desatarse contra la socialdemocracia. Sin negar la receptividad de las masas a tales estímulos, su grado de culpa se relativiza simultáneamente: quienes claman contra las víctimas se revelan como víctimas, como peones manipulados por el poder político. El antisemitismo se fundamenta en condiciones sociales objetivas, así como en la conciencia e inconsciencia de las masas. Pero se manifiesta como una herramienta política: como una herramienta para integrar intereses grupales divergentes; como la forma más rápida y segura de distraer la atención de una necesidad vital para la cual existen otros medios.» (Del prólogo de Max Horkheimer y Theodor W. Adorno).</p></div>
        <button class="more" onclick="toggleMore(this)" aria-label="+">+</button>
       <div class="card-actions">
-        <a class="btn ghost" href="#" onclick="return fakeLink(event)">Descarregar prova de lectura</a>
-        <a class="btn solid" href="#" onclick="return fakeLink(event)">Adquirir-lo · 6,00 €</a>
+        <a class="btn ghost" href="https://safranar.github.io/#" onclick="return fakeLink(event)">Descarregar prova de lectura</a>
+        <a class="btn solid" href="https://safranar.github.io/#" onclick="return fakeLink(event)">Adquirir-lo · 6,00 €</a>
         
       </div>
     </div>
@@ -491,7 +519,7 @@
       <span data-i18n="footTag">© 2026 Editorial Safranar</span>
     </div>
     <div>
-      <a href="https://safranar.github.io/#" onclick="return fakeLink(event)">hola@safranar.example</a><br>
+      <a href="mailto:aprentell@gmail.com">aprentell@gmail.com</a><br>
       <a href="https://safranar.github.io/#" onclick="return fakeLink(event)">Instagram</a> · <a href="https://safranar.github.io/#" onclick="return fakeLink(event)">Twitter/X</a> · <a href="https://safranar.github.io/#" onclick="return fakeLink(event)">Bluesky</a>
     </div>
   </div>
@@ -978,6 +1006,7 @@ tabs.forEach(tab=>{
 
 render();
 </script>
+
 
 
 </body></html>
