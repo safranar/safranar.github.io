@@ -8,9 +8,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com/">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
 <link href="./Editorial SAFRANAR — València_files/css2" rel="stylesheet">
-<script async
-  src="https://js.stripe.com/v3/buy-button.js">
-</script>
 <style>
   :root{
     --bg:#1c1114; --bg2:#25161b; --ink:#f4ede4; --muted:rgba(244,237,228,.62);
@@ -411,7 +408,7 @@
        <button class="more" onclick="toggleMore(this)" aria-label="+">+</button>
       <div class="card-actions">
         <a class="btn ghost" href="https://drive.google.com/file/d/1pr6iR_IjcwtyZu6V9Z-UO6zgRnp1C34r/view?usp=drive_link" target="_blank" rel="noopener">Descarregar prova de lectura</a>
-        <stripe-buy-button buy-button-id="buy_btn_1UWiAtPjPPke4RII1SSOhZ2b" publishable-key="pk_live_51UTGpqPjPPke4RIIgybV1GkXJCn7anH5zXvUJ1wh3kgojHFziVxqyld5WucoNPjZiFGEjZuWHu4BQH1PPzzsyVQQ00yu6OIas5"></stripe-buy-button>
+        <a class="btn solid" href="https://buy.stripe.com/8x27sN5Dpg1Hco0gE52Fa05" target="_blank" rel="noopener">Adquirir-lo · 8,00 €</a>
       </div>
     </div>
   </article></div>
@@ -823,7 +820,6 @@ const BOOKS = [
     "price": "8,00 €",
     "stripe": "https://buy.stripe.com/8x27sN5Dpg1Hco0gE52Fa05",
     "sample": "https://drive.google.com/file/d/1pr6iR_IjcwtyZu6V9Z-UO6zgRnp1C34r/view?usp=drive_link",
-    "stripeBtnId": "buy_btn_1UWiAtPjPPke4RII1SSOhZ2b",
     "labelCa": "València · 3",
     "titleCa": "Ubi sunt?",
     "meta": {
@@ -957,9 +953,7 @@ function cardHTML(b){
     dlBtn = `<a class="btn ghost" href="#" onclick="return fakeLink(event)">${t.dl}</a>`;
   }
   let buyBtn;
-  if(b.stripeBtnId){
-    buyBtn = `<stripe-buy-button buy-button-id="${b.stripeBtnId}" publishable-key="pk_live_51UTGpqPjPPke4RIIgybV1GkXJCn7anH5zXvUJ1wh3kgojHFziVxqyld5WucoNPjZiFGEjZuWHu4BQH1PPzzsyVQQ00yu6OIas5"></stripe-buy-button>`;
-  } else if(typeof b.stripe === 'string'){
+  if(typeof b.stripe === 'string'){
     buyBtn = `<a class="btn solid" href="${b.stripe}" target="_blank" rel="noopener">${t.buy} · ${b.price}</a>`;
   } else if(b.stripe && b.stripe.ca && b.stripe.es){
     buyBtn = `<a class="btn solid" href="${b.stripe.ca}" target="_blank" rel="noopener">${t.buy} (${t.buyVal}) · ${b.price}</a>
