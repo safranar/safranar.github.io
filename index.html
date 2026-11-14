@@ -1159,6 +1159,13 @@ function cardHTML(b){
   } else if(b.stripe && b.stripe.ca && b.stripe.es){
     buyBtn = `<a class="btn solid" href="${b.stripe.ca}" target="_blank" rel="noopener">${t.buy} (${t.buyVal}) · ${b.price}</a>
         <a class="btn solid" href="${b.stripe.es}" target="_blank" rel="noopener">${t.buy} (${t.buyCast}) · ${b.price}</a>`;
+  } else if(b.bilingual){
+    if(lang==='ca' || lang==='es'){
+      buyBtn = `<a class="btn solid" href="#" onclick="return fakeLink(event)">${t.buy} · ${b.price}</a>`;
+    } else {
+      buyBtn = `<a class="btn solid" href="#" onclick="return fakeLink(event)">${t.buy} (${t.buyVal}) · ${b.price}</a>
+        <a class="btn solid" href="#" onclick="return fakeLink(event)">${t.buy} (${t.buyCast}) · ${b.price}</a>`;
+    }
   } else {
     buyBtn = `<a class="btn solid" href="#" onclick="return fakeLink(event)">${t.buy} · ${b.price}</a>`;
   }
